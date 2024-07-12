@@ -1,11 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CustomToggleGroup : MonoBehaviour
 {
+    public bool SelectFirstOnEnable = true;
     public Toggle[] Toggles;
 
     public void SwitchToToggle(Toggle targetToggle)
@@ -18,11 +16,9 @@ public class CustomToggleGroup : MonoBehaviour
 
     private void OnEnable()
     {
-        SwitchToToggle(Toggles[0]);
-    }
-
-    private void OnDestroy()
-    {
+        if (!SelectFirstOnEnable)
+            return;
         
+        SwitchToToggle(Toggles[0]);
     }
 }

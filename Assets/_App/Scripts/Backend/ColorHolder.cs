@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class ColorHolder : MonoBehaviour
 {
+    public bool SelectFirstColorOnEnable = true;
     public Color SelectedColor { get; private set; }
 
     private CustomToggleGroup customToggleGroup;
@@ -19,6 +20,9 @@ public class ColorHolder : MonoBehaviour
 
     private void OnEnable()
     {
+        if (!SelectFirstColorOnEnable)
+            return;
+        
         Toggle firstToggle = customToggleGroup.Toggles[0];
         SelectedColor = firstToggle.targetGraphic.color;
     }

@@ -3337,6 +3337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Header: {fileID: 4245505587475291483}
   Counter: {fileID: 4398959933628404469}
+  EditButton: {fileID: 8469487800897916048}
 --- !u!1 &8318800159246926907
 GameObject:
   m_ObjectHideFlags: 0

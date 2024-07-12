@@ -3,8 +3,9 @@ using UnityEngine.UI;
 
 public class ColorChangeToggle : MonoBehaviour
 {
+    public Color Color { get; private set; }
+    
     private ColorHolder colorHolder;
-    private Color color;
     private CustomToggleGroup customToggleGroup;
     private Toggle toggle;
 
@@ -12,7 +13,7 @@ public class ColorChangeToggle : MonoBehaviour
     {
         toggle = GetComponent<Toggle>();
         colorHolder = GetComponentInParent<ColorHolder>();
-        color = GetComponentInChildren<Image>().color;
+        Color = GetComponentInChildren<Image>().color;
         customToggleGroup = colorHolder.GetComponent<CustomToggleGroup>();
     }
 
@@ -20,7 +21,7 @@ public class ColorChangeToggle : MonoBehaviour
     {
         if (value)
         {
-            colorHolder.SetColor(color);
+            colorHolder.SetColor(Color);
             customToggleGroup.SwitchToToggle(toggle);
         }
     }

@@ -4,7 +4,8 @@ using UnityEngine;
 public enum Screens
 {
     Main,
-    CategoryCreator
+    CategoryCreator,
+    CategoryEditor
 }
 
 public class ScreenStatesSwitcher : MonoBehaviour
