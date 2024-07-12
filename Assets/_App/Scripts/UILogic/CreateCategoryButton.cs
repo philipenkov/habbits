@@ -16,9 +16,20 @@ public class CreateCategoryButton : MonoBehaviour
         button.onClick.AddListener(SendDataToCategorySpawner);
         InputField.onValueChanged.AddListener(OnInputFieldChanged);
     }
-    
-    //TODO: сбрасывать интерактивность кнопки
-    
+
+    private void OnEnable()
+    {
+        ResetInput();
+    }
+
+    private void ResetInput()
+    {
+        if (button)
+            button.interactable = false;
+        
+        InputField.text = string.Empty;
+    }
+
     private void OnInputFieldChanged(string text)
     {
         if (!string.IsNullOrEmpty(text))
@@ -33,6 +44,7 @@ public class CreateCategoryButton : MonoBehaviour
 
     private void SendDataToCategorySpawner()
     {
+        Debug.Log(ColorHolder.SelectedColor);
         CategorySpawner.CreateCategory(InputField.text, ColorHolder.SelectedColor);
     }
 

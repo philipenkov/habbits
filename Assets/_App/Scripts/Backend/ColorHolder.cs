@@ -5,6 +5,13 @@ public class ColorHolder : MonoBehaviour
 {
     public Color SelectedColor { get; private set; }
 
+    private CustomToggleGroup customToggleGroup;
+
+    private void Awake()
+    {
+        customToggleGroup = GetComponent<CustomToggleGroup>();
+    }
+
     public void SetColor(Color color)
     {
         SelectedColor = color;
@@ -12,8 +19,7 @@ public class ColorHolder : MonoBehaviour
 
     private void OnEnable()
     {
-        Toggle firstToggle = GetComponentInChildren<Toggle>();
-        firstToggle.isOn = true;
+        Toggle firstToggle = customToggleGroup.Toggles[0];
         SelectedColor = firstToggle.targetGraphic.color;
     }
 }
