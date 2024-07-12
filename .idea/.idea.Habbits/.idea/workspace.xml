@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a4f19821-2472-4753-9128-d0353b521012" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HabbitsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HabbitsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Animations/HideIdleScreen.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Animations/HideIdleScreen.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Animations/ShowIdleScreen.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Animations/ShowIdleScreen.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Animations/ShowScreen.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Animations/ShowScreen.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/ColorHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/ColorHolder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ColorChangeToggle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ColorChangeToggle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CreateCategoryButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CreateCategoryButton.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +76,7 @@
       <updated>1720633322347</updated>
       <workItem from="1720633345179" duration="23000" />
       <workItem from="1720697804506" duration="6538000" />
-      <workItem from="1720772698682" duration="4709000" />
+      <workItem from="1720772698682" duration="5304000" />
     </task>
     <servers />
   </component>
