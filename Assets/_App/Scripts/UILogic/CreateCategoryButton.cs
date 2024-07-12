@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class CreateCategoryButton : MonoBehaviour
 {
     public CategorySpawner CategorySpawner;
-    public Image ColorPreviewImage;
+    public ColorHolder ColorHolder;
     public TMP_InputField InputField;
 
     private Button button;
@@ -33,7 +33,7 @@ public class CreateCategoryButton : MonoBehaviour
 
     private void SendDataToCategorySpawner()
     {
-        CategorySpawner.CreateCategory(InputField.text, ColorPreviewImage.color);
+        CategorySpawner.CreateCategory(InputField.text, ColorHolder.SelectedColor);
     }
 
     private void OnDestroy()
