@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DeleteCanvasGroup
+  m_Controller: {fileID: 9100000, guid: 04081c0715d71174d87d18aaee0de9d6, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: a9c75fcf8bfb3c34cb6ae55faa943f7b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2810a5f54a6724a48b0aa257265f87e8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 16332b1097eb9304babb2660dd1f99d8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a227f62941f9a524f9583cf73a036794, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5b4559f5d9106114e90a9b7aa8fccada, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d42dd2be3f3f6064fa5ed0bd916eb91c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6470299ff9ba67742bd55b0e8f202674, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: da14543f5150f224a9d2370d4d752961, type: 2}
