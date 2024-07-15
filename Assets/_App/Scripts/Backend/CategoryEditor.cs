@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +6,7 @@ using UnityEngine.UI;
 public class CategoryEditor : MonoBehaviour
 {
     public TMP_InputField CategoryNameField;
+    public CategoriesHolder CategoriesHolder;
     public ColorChangeToggle[] ColorChangeToggles;
     
     private CategoryPanel categoryPanelToEdit;
@@ -29,6 +28,11 @@ public class CategoryEditor : MonoBehaviour
             toggle.GetComponent<Toggle>().isOn = true;
             return;
         }
+    }
+
+    public void DeleteCategory()
+    {
+        CategoriesHolder.DeleteCategory(categoryPanelToEdit);
     }
 
     public void Save(string newName, Color newColor)
