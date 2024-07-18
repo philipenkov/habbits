@@ -5,7 +5,8 @@ public enum Screens
 {
     Main,
     CategoryCreator,
-    CategoryEditor
+    CategoryEditor,
+    EditDay
 }
 
 public class ScreenStatesSwitcher : MonoBehaviour
