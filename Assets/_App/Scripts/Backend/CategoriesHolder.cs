@@ -8,12 +8,15 @@ public class CategoriesHolder : MonoBehaviour
 
     private List<CategoryPanel> categories = new List<CategoryPanel>();
 
-    public void CreateCategory(string header, Color color, int counterValue = 0)
+    public void CreateCategory(string header, Color color, bool isNew, int counterValue = 0)
     {
         GameObject categoryObject = Instantiate(CategoryPrefab, SpawnParent);
         CategoryPanel categoryPanel = categoryObject.GetComponent<CategoryPanel>();
         categoryPanel.SetInfo(header, color, counterValue);
         categories.Add(categoryPanel);
+        
+        if (isNew)
+            categoryPanel.CreateDayButton();
     }
 
     public void DeleteCategory(CategoryPanel categoryPanel)

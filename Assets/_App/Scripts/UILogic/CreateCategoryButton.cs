@@ -45,7 +45,7 @@ public class CreateCategoryButton : MonoBehaviour
     private void SendDataToCategorySpawner()
     {
         Debug.Log(ColorHolder.SelectedColor);
-        CategoriesHolder.CreateCategory(InputField.text, ColorHolder.SelectedColor);
+        CategoriesHolder.CreateCategory(InputField.text, ColorHolder.SelectedColor, true);
     }
 
     private void OnDestroy()

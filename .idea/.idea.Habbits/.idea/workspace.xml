@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4f19821-2472-4753-9128-d0353b521012" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/HabbitsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HabbitsScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_App/Prefabs/CategoryPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Prefabs/CategoryPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoriesHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoriesHolder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CreateCategoryButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CreateCategoryButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/DayButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/DayButton.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +22,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/ColorHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ColorChangeToggle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CreateCategoryButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CurrentDayInfoPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CustomToggleGroup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/Screen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ScreenStatesSwitcher.cs" root0="FORCE_HIGHLIGHTING" />
@@ -32,16 +35,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "preferences.build.unityPlugin",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.build.unityPlugin&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.37f1\Editor\Unity.exe" />
@@ -86,6 +89,7 @@
       <workItem from="1720806182468" duration="4202000" />
       <workItem from="1721058659015" duration="1493000" />
       <workItem from="1721285482044" duration="3097000" />
+      <workItem from="1721473616071" duration="3524000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,21 +13,36 @@ namespace _App.Scripts.UILogic
 
     public class DayButton : MonoBehaviour
     {
+        public event Action<DayInfo> OnButtonPressed;
+        
         public Button Button;
+        public Image ButtonImage;
+
+        private DayInfo dayInfo;
 
         private void Start()
         {
-        
+            Button.onClick.AddListener(SendPressedButtonSignal);
+        }
+
+        public void Init(DayInfo initDayInfo)
+        {
+            dayInfo = initDayInfo;
+        }
+
+        public void ChangeColor(Color newColor)
+        {
+            ButtonImage.color = newColor;
         }
 
         private void SendPressedButtonSignal()
         {
-        
+            OnButtonPressed?.Invoke(dayInfo);
         }
 
         private void OnDestroy()
         {
-        
+            Button.onClick.RemoveListener(SendPressedButtonSignal);
         }
     }
 }

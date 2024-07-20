@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using _App.Scripts.UILogic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 public class CategoryPanel : MonoBehaviour
@@ -10,6 +11,10 @@ public class CategoryPanel : MonoBehaviour
     public TMP_Text Header;
     public TMP_Text Counter;
     public Button EditButton;
+    
+    [Space]
+    public DayButton DayButtonPrefab;
+    public Transform DaysPanel;
 
     private Queue<DayButton> dayButtons = new Queue<DayButton>();
 
@@ -34,6 +39,20 @@ public class CategoryPanel : MonoBehaviour
         Header.text = headerText;
         Counter.text = counterValue.ToString();
         ColorTheme = color;
+    }
+
+    public void CreateDayButton()
+    {
+        DayButton dayButton = Instantiate(DayButtonPrefab, DaysPanel);
+
+        DayInfo info = new DayInfo();
+        info.Info = String.Empty;
+        info.DateTime = DateTime.Now;
+        info.IsFilled = false;
+
+        dayButton.Init(info);
+        // Если info.IsFilled = true;
+       // dayButton.ChangeColor(ColorTheme);
     }
 
     private void OnDestroy()
