@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using _App.Scripts.UILogic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,8 +10,8 @@ public class CategoryPanel : MonoBehaviour
     public TMP_Text Header;
     public TMP_Text Counter;
     public Button EditButton;
-    
-    //private Queue<>
+
+    private Queue<DayButton> dayButtons = new Queue<DayButton>();
 
     public Color ColorTheme { get; private set; }
 
