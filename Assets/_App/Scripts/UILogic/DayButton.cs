@@ -19,6 +19,7 @@ namespace _App.Scripts.UILogic
         public Image ButtonImage;
 
         private DayInfo dayInfo;
+        private EditDayInfoController editDayInfoController;
 
         private void Start()
         {
@@ -37,6 +38,11 @@ namespace _App.Scripts.UILogic
 
         private void SendPressedButtonSignal()
         {
+            ScreenStatesSwitcher.SwitchTo(Screens.EditDay);
+            if (editDayInfoController == null)
+                editDayInfoController = FindObjectOfType<EditDayInfoController>(false);
+            
+            editDayInfoController.SetDayInfo(dayInfo);
             OnButtonPressed?.Invoke(dayInfo);
         }
 

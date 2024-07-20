@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +19,8 @@ public class ExpandedDay : MonoBehaviour
     public void SetExpandedDay(DateTime dateTime, string info, bool filled)
     {
         Day = dateTime.Day;
-        Month = dateTime.Month.ToString("MMMM");
+        CultureInfo cultureInfo = new CultureInfo("en-US");
+        Month = dateTime.ToString("MMMM", cultureInfo);
         Year = dateTime.Year;
         Info = info;
         isFilled = filled;
