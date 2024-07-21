@@ -16,7 +16,8 @@ public class CategoryPanel : MonoBehaviour
     public DayButton DayButtonPrefab;
     public Transform DaysPanel;
 
-    private Queue<DayButton> dayButtons = new Queue<DayButton>();
+    public List<DayButton> DayButtons { get; private set; } = new List<DayButton>();
+
 
     public Color ColorTheme { get; private set; }
 
@@ -49,9 +50,12 @@ public class CategoryPanel : MonoBehaviour
         info.Info = String.Empty;
         info.DateTime = DateTime.Now;
         info.IsFilled = false;
-
+        info.CategoryPanel = this;
+        
+        DayButtons.Add(dayButton);
         dayButton.Init(info);
-        // Если info.IsFilled = true;
+        
+        //TODO: Если info.IsFilled = true;
        // dayButton.ChangeColor(ColorTheme);
     }
 

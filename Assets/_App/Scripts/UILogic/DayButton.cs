@@ -9,16 +9,16 @@ namespace _App.Scripts.UILogic
         public DateTime DateTime;
         public bool IsFilled;
         public string Info;
+        public CategoryPanel CategoryPanel;
     }
 
     public class DayButton : MonoBehaviour
     {
-        public event Action<DayInfo> OnButtonPressed;
-        
         public Button Button;
         public Image ButtonImage;
 
-        private DayInfo dayInfo;
+        public DayInfo DayInfo { get; private set; }
+        
         private EditDayInfoController editDayInfoController;
 
         private void Start()
@@ -28,7 +28,7 @@ namespace _App.Scripts.UILogic
 
         public void Init(DayInfo initDayInfo)
         {
-            dayInfo = initDayInfo;
+            DayInfo = initDayInfo;
         }
 
         public void ChangeColor(Color newColor)
@@ -42,8 +42,7 @@ namespace _App.Scripts.UILogic
             if (editDayInfoController == null)
                 editDayInfoController = FindObjectOfType<EditDayInfoController>(false);
             
-            editDayInfoController.SetDayInfo(dayInfo);
-            OnButtonPressed?.Invoke(dayInfo);
+            editDayInfoController.SetDayInfo(DayInfo);
         }
 
         private void OnDestroy()
