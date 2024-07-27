@@ -42,7 +42,7 @@ public class CategoryPanel : MonoBehaviour
         ColorTheme = color;
     }
 
-    public void CreateDayButton()
+    public void CreateEmptyDayButton()
     {
         DayButton dayButton = Instantiate(DayButtonPrefab, DaysPanel);
 
@@ -57,6 +57,21 @@ public class CategoryPanel : MonoBehaviour
         
         //TODO: Если info.IsFilled = true;
        // dayButton.ChangeColor(ColorTheme);
+    }
+
+    public void LoadButton(DayButtonJSON dayButtonJson)
+    {
+        DayButton dayButton = Instantiate(DayButtonPrefab, DaysPanel);
+
+        DayInfo info = new DayInfo();
+        DayInfoJSON jsonInfo = dayButtonJson.DayInfo;
+        info.Info = jsonInfo.Info;
+        info.DateTime = jsonInfo.DateTime;
+        info.IsFilled = jsonInfo.IsFilled;
+        info.CategoryPanel = this;
+        
+        DayButtons.Add(dayButton);
+        dayButton.Init(info);
     }
 
     private void OnDestroy()
