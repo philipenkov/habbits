@@ -1,15 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using _App.Scripts.UILogic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [Serializable]
 public class CategoriesHolderJSON
 {
-    public List<CategoryPanelJSON> categories;
+    public List<CategoryPanelJSON> Categories;
 }
 
 [Serializable]
@@ -17,7 +14,7 @@ public class CategoryPanelJSON
 {
     public string Header;
     public string Count;
-    public Color color;
+    public Color Color;
     public List<DayButtonJSON> DayButtons;
 }
 
@@ -48,19 +45,18 @@ public class SaveLoadManager : MonoBehaviour
 {
     [HideInInspector]
     public CategoriesHolderJSON CategoriesHolderJson = new CategoriesHolderJSON();
-    public TMP_Text Text;
     public CategoriesHolder CategoriesHolder;
 
     private void Start()
     {
-        CategoriesHolderJson.categories = new List<CategoryPanelJSON>();
+        CategoriesHolderJson.Categories = new List<CategoryPanelJSON>();
         CategoriesHolder.OnNewCategoriesChanged += SaveCategories;
         LoadCategories();
     }
     
     public void SaveCategories(List<CategoryPanel> categoryPanels)
     {
-        FillCategoriesJSON(categoryPanels);
+        FillCategoriesJson(categoryPanels);
         string path = System.IO.Path.Combine(Application.persistentDataPath, "nhabits_save.json");
         SaveToJson(path);
     }
@@ -85,25 +81,23 @@ public class SaveLoadManager : MonoBehaviour
             string json = System.IO.File.ReadAllText(path);
             CategoriesHolderJson = JsonUtility.FromJson<CategoriesHolderJSON>(json);
             TransferJsonToCategories();
-            Text.text = "loaded";
             return true;
         }
         else
         {
-            Text.text = "not found";
             return false;
         }
     }
 
-    private void FillCategoriesJSON(List<CategoryPanel> categoryPanels)
+    private void FillCategoriesJson(List<CategoryPanel> categoryPanels)
     {
-        List<CategoryPanelJSON> categoriesJson = CategoriesHolderJson.categories;
+        List<CategoryPanelJSON> categoriesJson = CategoriesHolderJson.Categories;
         categoriesJson.Clear();
         
         for (int i = 0; i < categoryPanels.Count; i++)
         {
             categoriesJson.Add(new CategoryPanelJSON());
-            categoriesJson[i].color = categoryPanels[i].ColorTheme;
+            categoriesJson[i].Color = categoryPanels[i].ColorTheme;
             categoriesJson[i].Count = categoryPanels[i].Counter.text;
             categoriesJson[i].Header = categoryPanels[i].Header.text;
             categoriesJson[i].DayButtons = new List<DayButtonJSON>();
@@ -119,11 +113,11 @@ public class SaveLoadManager : MonoBehaviour
 
     private void TransferJsonToCategories()
     {
-        List<CategoryPanelJSON> categoriesJson = CategoriesHolderJson.categories;
+        List<CategoryPanelJSON> categoriesJson = CategoriesHolderJson.Categories;
 
         for (int i = 0; i < categoriesJson.Count; i++)
         {
-            CategoriesHolder.LoadCategory(categoriesJson[i].Header, categoriesJson[i].color, 
+            CategoriesHolder.LoadCategory(categoriesJson[i].Header, categoriesJson[i].Color, 
                 int.Parse(categoriesJson[i].Count), categoriesJson[i]);
         }
     }
