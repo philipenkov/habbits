@@ -38,6 +38,6 @@ public class CategoryEditor : MonoBehaviour
     public void Save(string newName, Color newColor)
     {
         categoryPanelToEdit.SetInfo(newName, newColor, Int32.Parse(categoryPanelToEdit.Counter.text));
-        CategoriesHolder.SendCategoriesChangedEvent();
+        CategoriesHolder.SendCategoriesChangedEvent(categoryPanelToEdit);
     }
 }

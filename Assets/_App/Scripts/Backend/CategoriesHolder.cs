@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CategoriesHolder : MonoBehaviour
 {
-    public event Action<List<CategoryPanel>> OnNewCategoriesChanged;
+    public event Action<CategoryPanel, int> OnNewCategoriesChanged;
     
     public Transform SpawnParent;
     public GameObject CategoryPrefab;
@@ -19,7 +19,7 @@ public class CategoriesHolder : MonoBehaviour
         categories.Add(categoryPanel);
 
         categoryPanel.CreateEmptyDayButton(); 
-        SendCategoriesChangedEvent();
+        SendCategoriesChangedEvent(categoryPanel);
     }
 
     public void LoadCategory(string header, Color color, int counterValue, CategoryPanelJSON categoryPanelJson)
@@ -39,11 +39,11 @@ public class CategoriesHolder : MonoBehaviour
     {
         categories.Remove(categoryPanel);
         Destroy(categoryPanel.gameObject);
-        SendCategoriesChangedEvent();
+        SendCategoriesChangedEvent(categoryPanel);
     }
 
-    public void SendCategoriesChangedEvent()
+    public void SendCategoriesChangedEvent(CategoryPanel categoryPanel)
     {
-        OnNewCategoriesChanged?.Invoke(categories);
+        OnNewCategoriesChanged?.Invoke(categoryPanel, categories.IndexOf(categoryPanel));
     }
 }

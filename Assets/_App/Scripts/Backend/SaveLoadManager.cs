@@ -50,13 +50,24 @@ public class SaveLoadManager : MonoBehaviour
     private void Start()
     {
         CategoriesHolderJson.Categories = new List<CategoryPanelJSON>();
-        CategoriesHolder.OnNewCategoriesChanged += SaveCategories;
+       CategoriesHolder.OnNewCategoriesChanged += SaveCategory;
         LoadCategories();
     }
     
-    public void SaveCategories(List<CategoryPanel> categoryPanels)
+    // public void SaveCategories(List<CategoryPanel> categoryPanels)
+    // {
+    //     FillCategoriesJson(categoryPanels);
+    //     SaveToPath();
+    // }
+
+    public void SaveCategory(CategoryPanel categoryPanel, int categoryId)
     {
-        FillCategoriesJson(categoryPanels);
+        SaveCategoryById(categoryPanel, categoryId);
+        SaveToPath();
+    }
+
+    private void SaveToPath()
+    {
         string path = System.IO.Path.Combine(Application.persistentDataPath, "nhabits_save.json");
         SaveToJson(path);
     }
@@ -89,7 +100,7 @@ public class SaveLoadManager : MonoBehaviour
         }
     }
 
-    private void FillCategoriesJson(List<CategoryPanel> categoryPanels)
+    /*private void FillCategoriesJson(List<CategoryPanel> categoryPanels)
     {
         List<CategoryPanelJSON> categoriesJson = CategoriesHolderJson.Categories;
         categoriesJson.Clear();
@@ -108,6 +119,39 @@ public class SaveLoadManager : MonoBehaviour
                 dayButtonJson.DayInfo = GetDayInfoJson(categoryPanels[i].DayButtons[j].DayInfo);
                 categoriesJson[i].DayButtons.Add(dayButtonJson);
             }
+        }
+    }*/
+
+    private void SaveCategoryById(CategoryPanel categoryPanel, int id)
+    {
+        List<CategoryPanelJSON> categoriesJson = CategoriesHolderJson.Categories;
+        int newId = 0;
+        bool isNewCategory = false;
+
+        if (id >= categoriesJson.Count)
+        {
+            newId = categoriesJson.Count;
+            categoriesJson.Add(new CategoryPanelJSON());
+            isNewCategory = true;
+        }
+        else
+        {
+            newId = id;
+        }
+
+        categoriesJson[newId].Color = categoryPanel.ColorTheme;
+        categoriesJson[newId].Count = categoryPanel.Counter.text;
+        categoriesJson[newId].Header = categoryPanel.Header.text;
+
+        if (!isNewCategory)
+            return;
+        
+        categoriesJson[newId].DayButtons = new List<DayButtonJSON>();
+        for (int j = 0; j < categoryPanel.DayButtons.Count; j++)
+        {
+            DayButtonJSON dayButtonJson = new DayButtonJSON();
+            dayButtonJson.DayInfo = GetDayInfoJson(categoryPanel.DayButtons[j].DayInfo);
+            categoriesJson[newId].DayButtons.Add(dayButtonJson);
         }
     }
 
@@ -142,7 +186,7 @@ public class SaveLoadManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        CategoriesHolder.OnNewCategoriesChanged -= SaveCategories;
+      CategoriesHolder.OnNewCategoriesChanged -= SaveCategory;
     }
 }
 
