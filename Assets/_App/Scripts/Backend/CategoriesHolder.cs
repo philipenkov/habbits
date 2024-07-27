@@ -31,7 +31,7 @@ public class CategoriesHolder : MonoBehaviour
 
         for (int i = 0; i < categoryPanelJson.DayButtons.Count; i++)
         {
-            
+            categoryPanel.LoadButton(categoryPanelJson.DayButtons[i]);
         }
     }
 

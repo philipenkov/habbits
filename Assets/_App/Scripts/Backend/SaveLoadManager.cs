@@ -30,10 +30,17 @@ public class DayButtonJSON
 [Serializable]
 public class DayInfoJSON
 {
-    public DateTime DateTime;
+    public DateTimeJSON DateTime;
     public bool IsFilled;
     public string Info;
-    public CategoryPanel CategoryPanel;
+}
+
+[Serializable]
+public class DateTimeJSON
+{
+    public int Year;
+    public int Month;
+    public int Day;
 }
 
 
@@ -49,6 +56,19 @@ public class SaveLoadManager : MonoBehaviour
         CategoriesHolderJson.categories = new List<CategoryPanelJSON>();
         CategoriesHolder.OnNewCategoriesChanged += SaveCategories;
         LoadCategories();
+    }
+    
+    public void SaveCategories(List<CategoryPanel> categoryPanels)
+    {
+        FillCategoriesJSON(categoryPanels);
+        string path = System.IO.Path.Combine(Application.persistentDataPath, "nhabits_save.json");
+        SaveToJson(path);
+    }
+
+    public bool LoadCategories()
+    {
+        string path = System.IO.Path.Combine(Application.persistentDataPath, "nhabits_save.json");
+        return LoadFromJson(path);
     }
 
     private void SaveToJson(string path)
@@ -112,22 +132,18 @@ public class SaveLoadManager : MonoBehaviour
     {
         DayInfoJSON dayInfoJson = new DayInfoJSON();
         dayInfoJson.Info = dayInfo.Info;
-        dayInfoJson.DateTime = dayInfo.DateTime;
+        dayInfoJson.DateTime = GetDateTimeJson(dayInfo.DateTime);
         dayInfoJson.IsFilled = dayInfo.IsFilled;
         return dayInfoJson;
     }
 
-    public void SaveCategories(List<CategoryPanel> categoryPanels)
+    private DateTimeJSON GetDateTimeJson(DateTime dateTime)
     {
-        FillCategoriesJSON(categoryPanels);
-        string path = System.IO.Path.Combine(Application.persistentDataPath, "nhbits_save.json");
-        SaveToJson(path);
-    }
-
-    public bool LoadCategories()
-    {
-        string path = System.IO.Path.Combine(Application.persistentDataPath, "nhbits_save.json");
-        return LoadFromJson(path);
+        DateTimeJSON dateTimeJson = new DateTimeJSON();
+        dateTimeJson.Day = dateTime.Day;
+        dateTimeJson.Month = dateTime.Month;
+        dateTimeJson.Year = dateTime.Year;
+        return dateTimeJson;
     }
 
     private void OnDestroy()

@@ -66,12 +66,18 @@ public class CategoryPanel : MonoBehaviour
         DayInfo info = new DayInfo();
         DayInfoJSON jsonInfo = dayButtonJson.DayInfo;
         info.Info = jsonInfo.Info;
-        info.DateTime = jsonInfo.DateTime;
+        info.DateTime = GetDateTimeFromLoadedJson(jsonInfo.DateTime);
         info.IsFilled = jsonInfo.IsFilled;
         info.CategoryPanel = this;
         
         DayButtons.Add(dayButton);
         dayButton.Init(info);
+    }
+
+    private DateTime GetDateTimeFromLoadedJson(DateTimeJSON dateTimeJson)
+    {
+        DateTime dateTime = new DateTime(dateTimeJson.Year, dateTimeJson.Month, dateTimeJson.Day);
+        return dateTime;
     }
 
     private void OnDestroy()
