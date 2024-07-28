@@ -47,18 +47,16 @@ public class SaveLoadManager : MonoBehaviour
     public CategoriesHolderJSON CategoriesHolderJson = new CategoriesHolderJSON();
     public CategoriesHolder CategoriesHolder;
 
+    private CurrentDayInfoPanel currentDayInfoPanel;
+
     private void Start()
     {
+        currentDayInfoPanel = FindObjectOfType<CurrentDayInfoPanel>(true);
         CategoriesHolderJson.Categories = new List<CategoryPanelJSON>();
-       CategoriesHolder.OnNewCategoriesChanged += SaveCategory;
+        CategoriesHolder.OnNewCategoriesChanged += SaveCategory;
+        currentDayInfoPanel.OnInfoChanged += SaveDayInfo;
         LoadCategories();
     }
-    
-    // public void SaveCategories(List<CategoryPanel> categoryPanels)
-    // {
-    //     FillCategoriesJson(categoryPanels);
-    //     SaveToPath();
-    // }
 
     public void SaveCategory(CategoryPanel categoryPanel, int categoryId)
     {
@@ -100,28 +98,6 @@ public class SaveLoadManager : MonoBehaviour
         }
     }
 
-    /*private void FillCategoriesJson(List<CategoryPanel> categoryPanels)
-    {
-        List<CategoryPanelJSON> categoriesJson = CategoriesHolderJson.Categories;
-        categoriesJson.Clear();
-        
-        for (int i = 0; i < categoryPanels.Count; i++)
-        {
-            categoriesJson.Add(new CategoryPanelJSON());
-            categoriesJson[i].Color = categoryPanels[i].ColorTheme;
-            categoriesJson[i].Count = categoryPanels[i].Counter.text;
-            categoriesJson[i].Header = categoryPanels[i].Header.text;
-            categoriesJson[i].DayButtons = new List<DayButtonJSON>();
-
-            for (int j = 0; j < categoryPanels[i].DayButtons.Count; j++)
-            {
-                DayButtonJSON dayButtonJson = new DayButtonJSON();
-                dayButtonJson.DayInfo = GetDayInfoJson(categoryPanels[i].DayButtons[j].DayInfo);
-                categoriesJson[i].DayButtons.Add(dayButtonJson);
-            }
-        }
-    }*/
-
     private void SaveCategoryById(CategoryPanel categoryPanel, int id)
     {
         List<CategoryPanelJSON> categoriesJson = CategoriesHolderJson.Categories;
@@ -144,7 +120,9 @@ public class SaveLoadManager : MonoBehaviour
         categoriesJson[newId].Header = categoryPanel.Header.text;
 
         if (!isNewCategory)
+        {
             return;
+        }
         
         categoriesJson[newId].DayButtons = new List<DayButtonJSON>();
         for (int j = 0; j < categoryPanel.DayButtons.Count; j++)
@@ -153,6 +131,19 @@ public class SaveLoadManager : MonoBehaviour
             dayButtonJson.DayInfo = GetDayInfoJson(categoryPanel.DayButtons[j].DayInfo);
             categoriesJson[newId].DayButtons.Add(dayButtonJson);
         }
+    }
+
+    public void SaveDayInfo(DayInfo dayInfo)
+    {
+        CategoryPanel categoryPanel = dayInfo.CategoryPanel;
+        var dayButton = categoryPanel.DayButtons.Find(button => button.DayInfo == dayInfo);
+        var dayId = categoryPanel.DayButtons.IndexOf(dayButton);
+        int categoryId = CategoriesHolder.Categories.IndexOf(categoryPanel);
+        DayInfoJSON dayInfoJson = CategoriesHolderJson.Categories[categoryId].DayButtons[dayId].DayInfo;
+        dayInfoJson.Info = dayInfo.Info;
+        dayInfoJson.IsFilled = dayInfo.IsFilled;
+        
+        SaveToPath();
     }
 
     private void TransferJsonToCategories()
@@ -186,7 +177,8 @@ public class SaveLoadManager : MonoBehaviour
 
     private void OnDestroy()
     {
-      CategoriesHolder.OnNewCategoriesChanged -= SaveCategory;
+        CategoriesHolder.OnNewCategoriesChanged -= SaveCategory;
+        currentDayInfoPanel.OnInfoChanged -= SaveDayInfo;
     }
 }
 

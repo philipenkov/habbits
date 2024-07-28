@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace _App.Scripts.UILogic
 {
-    public struct DayInfo
+    public class DayInfo
     {
         public DateTime DateTime;
         public bool IsFilled;

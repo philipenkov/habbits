@@ -9,14 +9,14 @@ public class CategoriesHolder : MonoBehaviour
     public Transform SpawnParent;
     public GameObject CategoryPrefab;
 
-    private List<CategoryPanel> categories = new List<CategoryPanel>();
+    public List<CategoryPanel> Categories { get; private set; } = new List<CategoryPanel>();
 
     public void CreateCategory(string header, Color color, int counterValue = 0)
     {
         GameObject categoryObject = Instantiate(CategoryPrefab, SpawnParent);
         CategoryPanel categoryPanel = categoryObject.GetComponent<CategoryPanel>();
         categoryPanel.SetInfo(header, color, counterValue);
-        categories.Add(categoryPanel);
+        Categories.Add(categoryPanel);
 
         categoryPanel.CreateEmptyDayButton(); 
         SendCategoriesChangedEvent(categoryPanel);
@@ -27,7 +27,7 @@ public class CategoriesHolder : MonoBehaviour
         GameObject categoryObject = Instantiate(CategoryPrefab, SpawnParent);
         CategoryPanel categoryPanel = categoryObject.GetComponent<CategoryPanel>();
         categoryPanel.SetInfo(header, color, counterValue);
-        categories.Add(categoryPanel);
+        Categories.Add(categoryPanel);
 
         for (int i = 0; i < categoryPanelJson.DayButtons.Count; i++)
         {
@@ -37,13 +37,13 @@ public class CategoriesHolder : MonoBehaviour
 
     public void DeleteCategory(CategoryPanel categoryPanel)
     {
-        categories.Remove(categoryPanel);
+        Categories.Remove(categoryPanel);
         Destroy(categoryPanel.gameObject);
         SendCategoriesChangedEvent(categoryPanel);
     }
 
     public void SendCategoriesChangedEvent(CategoryPanel categoryPanel)
     {
-        OnNewCategoriesChanged?.Invoke(categoryPanel, categories.IndexOf(categoryPanel));
+        OnNewCategoriesChanged?.Invoke(categoryPanel, Categories.IndexOf(categoryPanel));
     }
 }
