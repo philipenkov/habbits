@@ -20,6 +20,11 @@ public class CategoryToExpandedSetter : MonoBehaviour
         
         if (currentPanelShown == categoryPanel)
             return;
+
+        foreach (Transform child in ExpandedDaysParent)
+        {
+            Destroy(child.gameObject);
+        }
         
         currentPanelShown = categoryPanel;
 
