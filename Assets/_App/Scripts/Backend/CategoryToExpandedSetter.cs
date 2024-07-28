@@ -32,8 +32,7 @@ public class CategoryToExpandedSetter : MonoBehaviour
         {
             var expandedDayObj = Instantiate(ExpandedDayPrefab, ExpandedDaysParent);
             ExpandedDay expandedDay = expandedDayObj.GetComponent<ExpandedDay>();
-            DayInfo listedDayInfo = dayButton.DayInfo;
-            expandedDay.SetExpandedDay(listedDayInfo.DateTime, listedDayInfo.Info, listedDayInfo.IsFilled);
+            expandedDay.SetExpandedDay(dayButton.DayInfo);
         }
     }
 

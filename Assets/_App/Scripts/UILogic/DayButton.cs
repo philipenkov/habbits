@@ -29,6 +29,8 @@ namespace _App.Scripts.UILogic
         public void Init(DayInfo initDayInfo)
         {
             DayInfo = initDayInfo;
+            if (DayInfo.IsFilled)
+                ChangeColor(DayInfo.CategoryPanel.ColorTheme);
         }
 
         public void ChangeColor(Color newColor)

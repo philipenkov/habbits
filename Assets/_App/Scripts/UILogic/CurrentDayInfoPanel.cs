@@ -3,6 +3,7 @@ using System.Globalization;
 using _App.Scripts.UILogic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CurrentDayInfoPanel : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class CurrentDayInfoPanel : MonoBehaviour
     public TMP_Text Month;
     public TMP_Text Year;
     public TMP_InputField Info;
+    public Image ColorStripe; 
 
     private DayInfo currentDayInfo;
 
@@ -31,6 +33,7 @@ public class CurrentDayInfoPanel : MonoBehaviour
         Year.text = dayInfo.DateTime.Year.ToString();
         Info.text = dayInfo.Info;
         currentDayInfo = dayInfo;
+        ColorStripe.color = dayInfo.CategoryPanel.ColorTheme;
     }
 
     public void DoneEditingDay()

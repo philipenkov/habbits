@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Globalization;
+using _App.Scripts.UILogic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,19 +20,19 @@ public class ExpandedDay : MonoBehaviour
 
     private bool isFilled;
 
-    public void SetExpandedDay(DateTime dateTime, string info, bool filled)
+    public void SetExpandedDay(DayInfo dayInfo)
     {
-        Day = dateTime.Day;
+        Day = dayInfo.DateTime.Day;
         CultureInfo cultureInfo = new CultureInfo("en-US");
-        Month = dateTime.ToString("MMMM", cultureInfo);
-        Year = dateTime.Year;
-        Info = info;
-        isFilled = filled;
+        Month = dayInfo.DateTime.ToString("MMMM", cultureInfo);
+        Year = dayInfo.DateTime.Year;
+        Info = dayInfo.Info;
+        isFilled = dayInfo.IsFilled;
         
-        SetButtonInfo();
+        SetButtonInfo(dayInfo.CategoryPanel.ColorTheme);
     }
 
-    private void SetButtonInfo()
+    private void SetButtonInfo(Color colorTheme)
     {
         DateTMP.text = Day.ToString();
         MonthTMP.text = Month;
@@ -44,8 +42,10 @@ public class ExpandedDay : MonoBehaviour
             NotesIcon.enabled = true;
         else
             NotesIcon.enabled = false;
-        
-       //TODO:  if (isFilled) ColoredFrame
-            
+
+        if (isFilled)
+        {
+            ColorFrame.color = colorTheme;
+        }
     }
 }

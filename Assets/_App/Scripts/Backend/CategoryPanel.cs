@@ -54,9 +54,6 @@ public class CategoryPanel : MonoBehaviour
         
         DayButtons.Add(dayButton);
         dayButton.Init(info);
-        
-        //TODO: Если info.IsFilled = true;
-       // dayButton.ChangeColor(ColorTheme);
     }
 
     public void LoadButton(DayButtonJSON dayButtonJson)
