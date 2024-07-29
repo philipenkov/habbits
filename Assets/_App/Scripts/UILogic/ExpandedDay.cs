@@ -10,6 +10,7 @@ public class ExpandedDay : MonoBehaviour
     public string Month { get; private set; }
     public int Year { get; private set; }
     public string Info { get; private set; }
+    public DayInfo LinkedDayInfo { get; private set; }
 
     public Image ColorFrame;
 
@@ -28,6 +29,7 @@ public class ExpandedDay : MonoBehaviour
         Year = dayInfo.DateTime.Year;
         Info = dayInfo.Info;
         isFilled = dayInfo.IsFilled;
+        LinkedDayInfo = dayInfo;
         
         SetButtonInfo(dayInfo.CategoryPanel.ColorTheme);
     }

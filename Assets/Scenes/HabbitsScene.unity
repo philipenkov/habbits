@@ -1011,10 +1011,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1164751096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -301.92}
-  m_SizeDelta: {x: 0, y: 6.25}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -2.919983}
+  m_SizeDelta: {x: 1080, y: 6.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &223078202
 MonoBehaviour:
@@ -6849,6 +6849,7 @@ MonoBehaviour:
   Year: {fileID: 1208844431}
   Info: {fileID: 82937130}
   ColorStripe: {fileID: 223078202}
+  CategoryToExpandedSetter: {fileID: 2131088014}
 --- !u!1001 &1193178931
 PrefabInstance:
   m_ObjectHideFlags: 0

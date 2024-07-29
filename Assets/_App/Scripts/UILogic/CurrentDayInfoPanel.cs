@@ -13,7 +13,8 @@ public class CurrentDayInfoPanel : MonoBehaviour
     public TMP_Text Month;
     public TMP_Text Year;
     public TMP_InputField Info;
-    public Image ColorStripe; 
+    public Image ColorStripe;
+    public CategoryToExpandedSetter CategoryToExpandedSetter;
 
     private DayInfo currentDayInfo;
 
@@ -38,8 +39,13 @@ public class CurrentDayInfoPanel : MonoBehaviour
 
     public void DoneEditingDay()
     {
+        Color colorToSet = currentDayInfo.CategoryPanel.ColorTheme;
         currentDayInfo.IsFilled = true;
         currentDayInfo.Info = Info.text;
-       OnInfoChanged?.Invoke(currentDayInfo);
+        DayButton dayButton = currentDayInfo.CategoryPanel.DayButtons.Find(button => button.DayInfo == currentDayInfo);
+        dayButton.ButtonImage.color = colorToSet;
+        ExpandedDay expandedDay = CategoryToExpandedSetter.ExpandedDays.Find(day => day.LinkedDayInfo == currentDayInfo);
+        expandedDay.ColorFrame.color = colorToSet;
+        OnInfoChanged?.Invoke(currentDayInfo);
     }
 }

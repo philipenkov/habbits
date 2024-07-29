@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using _App.Scripts.UILogic;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class CategoryToExpandedSetter : MonoBehaviour
     public EditDayInfoController EditDayInfoController;
     public GameObject ExpandedDayPrefab;
     public Transform ExpandedDaysParent;
+
+    public List<ExpandedDay> ExpandedDays { get; private set; } = new List<ExpandedDay>();
 
     private CategoryPanel currentPanelShown;
 
@@ -27,11 +30,13 @@ public class CategoryToExpandedSetter : MonoBehaviour
         }
         
         currentPanelShown = categoryPanel;
+        ExpandedDays.Clear();
 
         foreach (var dayButton in categoryPanel.DayButtons)
         {
             var expandedDayObj = Instantiate(ExpandedDayPrefab, ExpandedDaysParent);
             ExpandedDay expandedDay = expandedDayObj.GetComponent<ExpandedDay>();
+            ExpandedDays.Add(expandedDay);
             expandedDay.SetExpandedDay(dayButton.DayInfo);
         }
     }
