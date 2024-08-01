@@ -18,7 +18,7 @@ public class CategoriesHolder : MonoBehaviour
         categoryPanel.SetInfo(header, color, counterValue);
         Categories.Add(categoryPanel);
 
-        categoryPanel.CreateEmptyDayButton(); 
+        categoryPanel.CreateEmptyDayButton(DateTime.Now); 
         SendCategoriesChangedEvent(categoryPanel);
     }
 

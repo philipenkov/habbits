@@ -20,6 +20,7 @@ public class ExpandedDay : MonoBehaviour
     public Image NotesIcon;
 
     private bool isFilled;
+    private CurrentDayInfoPanel currentDayInfoPanel;
 
     public void SetExpandedDay(DayInfo dayInfo)
     {
@@ -49,5 +50,13 @@ public class ExpandedDay : MonoBehaviour
         {
             ColorFrame.color = colorTheme;
         }
+    }
+
+    public void SendInfoToCurrentDayPanel()
+    {
+        if (currentDayInfoPanel == null)
+            currentDayInfoPanel = FindObjectOfType<CurrentDayInfoPanel>();
+        
+        currentDayInfoPanel.Set(LinkedDayInfo);
     }
 }

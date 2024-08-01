@@ -492,6 +492,7 @@ Transform:
   - {fileID: 910911257}
   - {fileID: 541209073}
   - {fileID: 372019081}
+  - {fileID: 516421384}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &94479811
@@ -2652,6 +2653,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeleteWindowAnimator: {fileID: 494319325}
   AnimBoolName: On
+--- !u!1 &516421383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 516421384}
+  - component: {fileID: 516421385}
+  m_Layer: 0
+  m_Name: NewDayCreator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &516421384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516421383}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 85893856}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &516421385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516421383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df4b2c56f49107c4c87182f5c7daba4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SaveLoadManager: {fileID: 372019082}
+  CategoriesHolder: {fileID: 541209074}
 --- !u!1 &525556517
 GameObject:
   m_ObjectHideFlags: 0

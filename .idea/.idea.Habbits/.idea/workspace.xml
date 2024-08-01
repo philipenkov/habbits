@@ -4,9 +4,9 @@
     <list default="true" id="a4f19821-2472-4753-9128-d0353b521012" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/HabbitsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HabbitsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Prefabs/ColorToggle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Prefabs/ColorToggle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryToExpandedSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryToExpandedSetter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CurrentDayInfoPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CurrentDayInfoPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoriesHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoriesHolder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/SaveLoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/SaveLoadManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ExpandedDay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ExpandedDay.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +24,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryToExpandedSetter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/ColorHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/EditDayInfoController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/NewDayCreator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ColorChangeToggle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CreateCategoryButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CustomToggleGroup.cs" root0="FORCE_HIGHLIGHTING" />

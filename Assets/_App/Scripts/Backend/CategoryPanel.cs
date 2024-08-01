@@ -42,13 +42,13 @@ public class CategoryPanel : MonoBehaviour
         ColorTheme = color;
     }
 
-    public void CreateEmptyDayButton()
+    public void CreateEmptyDayButton(DateTime dateTime)
     {
         DayButton dayButton = Instantiate(DayButtonPrefab, DaysPanel);
 
         DayInfo info = new DayInfo();
         info.Info = String.Empty;
-        info.DateTime = DateTime.Now;
+        info.DateTime = dateTime;
         info.IsFilled = false;
         info.CategoryPanel = this;
         

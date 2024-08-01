@@ -43,6 +43,8 @@ public class DateTimeJSON
 
 public class SaveLoadManager : MonoBehaviour
 {
+    public event Action OnLoaded;
+    
     [HideInInspector]
     public CategoriesHolderJSON CategoriesHolderJson = new CategoriesHolderJSON();
     public CategoriesHolder CategoriesHolder;
@@ -90,6 +92,7 @@ public class SaveLoadManager : MonoBehaviour
             string json = System.IO.File.ReadAllText(path);
             CategoriesHolderJson = JsonUtility.FromJson<CategoriesHolderJSON>(json);
             TransferJsonToCategories();
+            OnLoaded?.Invoke();
             return true;
         }
         else
