@@ -56,8 +56,15 @@ public class SaveLoadManager : MonoBehaviour
         currentDayInfoPanel = FindObjectOfType<CurrentDayInfoPanel>(true);
         CategoriesHolderJson.Categories = new List<CategoryPanelJSON>();
         CategoriesHolder.OnNewCategoriesChanged += SaveCategory;
+        CategoriesHolder.OnCategoryDeleted += SaveCategoryDeletion;
         currentDayInfoPanel.OnInfoChanged += SaveDayInfo;
         LoadCategories();
+    }
+
+    private void SaveCategoryDeletion(CategoryPanel categoryPanel, int formerId)
+    {
+        CategoriesHolderJson.Categories.RemoveAt(formerId);
+        SaveToPath();
     }
 
     public void SaveCategory(CategoryPanel categoryPanel, int categoryId)
@@ -182,6 +189,7 @@ public class SaveLoadManager : MonoBehaviour
     {
         CategoriesHolder.OnNewCategoriesChanged -= SaveCategory;
         currentDayInfoPanel.OnInfoChanged -= SaveDayInfo;
+        CategoriesHolder.OnCategoryDeleted -= SaveCategoryDeletion;
     }
 }
 

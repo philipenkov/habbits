@@ -5,6 +5,7 @@ using UnityEngine;
 public class CategoriesHolder : MonoBehaviour
 {
     public event Action<CategoryPanel, int> OnNewCategoriesChanged;
+    public event Action<CategoryPanel, int> OnCategoryDeleted;
     
     public Transform SpawnParent;
     public GameObject CategoryPrefab;
@@ -37,9 +38,10 @@ public class CategoriesHolder : MonoBehaviour
 
     public void DeleteCategory(CategoryPanel categoryPanel)
     {
+        int formerId = Categories.IndexOf(categoryPanel);
         Categories.Remove(categoryPanel);
         Destroy(categoryPanel.gameObject);
-        SendCategoriesChangedEvent(categoryPanel);
+        OnCategoryDeleted?.Invoke(categoryPanel, formerId);
     }
 
     public void SendCategoriesChangedEvent(CategoryPanel categoryPanel)

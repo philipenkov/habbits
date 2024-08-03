@@ -26,6 +26,10 @@ public class NewDayCreator : MonoBehaviour
         int daysPassed = (int)timeSpan.TotalDays;
 
         List<DateTime> missedDates = GetMissedDates(lastDayTime, daysPassed);
+        
+        //TODO: сохранять созданные дни в категориях
+        
+        //TODO: если создать категорию и перезапустить - у нее появятся лищние дни
 
         foreach (var category in CategoriesHolder.Categories)
         {

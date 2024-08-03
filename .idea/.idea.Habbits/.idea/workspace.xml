@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a4f19821-2472-4753-9128-d0353b521012" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Prefabs/ExpandDayButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Prefabs/ExpandDayButton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoriesHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoriesHolder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/NewDayCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/NewDayCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/SaveLoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/SaveLoadManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +118,38 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoriesHolder.cs</url>
+          <line>26</line>
+          <properties documentPath="C:\Programming\Projects\HabbitsUnity\habbits\Assets\_App\Scripts\Backend\CategoriesHolder.cs" initialLine="25" containingFunctionPresentation="method 'LoadCategory'">
+            <startOffsets>
+              <option value="1001" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1002" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryEditor.cs</url>
+          <line>33</line>
+          <properties documentPath="C:\Programming\Projects\HabbitsUnity\habbits\Assets\_App\Scripts\Backend\CategoryEditor.cs" initialLine="33" containingFunctionPresentation="method 'DeleteCategory'">
+            <startOffsets>
+              <option value="876" />
+            </startOffsets>
+            <endOffsets>
+              <option value="877" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
