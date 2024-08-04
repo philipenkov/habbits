@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,30 +26,15 @@ public class NewDayCreator : MonoBehaviour
 
         List<DateTime> missedDates = GetMissedDates(lastDayTime, daysPassed);
         
-        //TODO: сохранять созданные дни в категориях
-        
-        //TODO: если создать категорию и перезапустить - у нее появятся лищние дни
-
         for (int i = 0; i < CategoriesHolder.Categories.Count; i++)
         {
             for (int j = 0; j < daysPassed; j++)
             {
-                //TODO: добавляются дни. но не сохраняются в категории. Категория всегда с 1 днем
                 CategoriesHolder.Categories[i].CreateEmptyDayButton(missedDates[j]);
             }
             
             SaveLoadManager.SaveCategoryAfterNewDaysCreated(CategoriesHolder.Categories[i], i);
         }
-        
-        // foreach (var category in CategoriesHolder.Categories)
-        // {
-        //     for (int i = 0; i < daysPassed; i++)
-        //     {
-        //         category.CreateEmptyDayButton(missedDates[i]);
-        //     }
-        // }
-        
-        
     }
     
     private List<DateTime> GetMissedDates(DateTime lastLaunchDate, int daysPassed)

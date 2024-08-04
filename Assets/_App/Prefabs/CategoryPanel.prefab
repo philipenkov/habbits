@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2748635991470698842}
   - component: {fileID: 3287393827290540648}
   - component: {fileID: 1854629712521602922}
+  - component: {fileID: 7364177555312715358}
   m_Layer: 0
   m_Name: DaysPanel
   m_TagString: Untagged
@@ -69,6 +70,20 @@ MonoBehaviour:
   m_Spacing: {x: 5, y: 5}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &7364177555312715358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924422549501261919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c09a2b5d27097e4ca272e1064c60d8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxDaysOnPanel: 28
+  DayButtonPrefab: {fileID: 3303328992063993502, guid: 68f921fba46e62547a5a100633f94d83, type: 3}
 --- !u!1 &2430184910520678466
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,5 +643,4 @@ MonoBehaviour:
   Header: {fileID: 4245505587475291483}
   Counter: {fileID: 4398959933628404469}
   EditButton: {fileID: 8469487800897916048}
-  DayButtonPrefab: {fileID: 3303328992063993502, guid: 68f921fba46e62547a5a100633f94d83, type: 3}
-  DaysPanel: {fileID: 2748635991470698842}
+  DaysPanel: {fileID: 7364177555312715358}

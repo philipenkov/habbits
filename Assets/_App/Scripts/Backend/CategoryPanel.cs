@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using _App.Scripts.UILogic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 public class CategoryPanel : MonoBehaviour
@@ -11,10 +10,9 @@ public class CategoryPanel : MonoBehaviour
     public TMP_Text Header;
     public TMP_Text Counter;
     public Button EditButton;
-    
+
     [Space]
-    public DayButton DayButtonPrefab;
-    public Transform DaysPanel;
+    public DaysPanel DaysPanel;
 
     public List<DayButton> DayButtons { get; private set; } = new List<DayButton>();
 
@@ -44,8 +42,7 @@ public class CategoryPanel : MonoBehaviour
 
     public void CreateEmptyDayButton(DateTime dateTime)
     {
-        DayButton dayButton = Instantiate(DayButtonPrefab, DaysPanel);
-
+        DayButton dayButton = DaysPanel.AddDayButton();
         DayInfo info = new DayInfo();
         info.Info = String.Empty;
         info.DateTime = dateTime;
@@ -58,7 +55,7 @@ public class CategoryPanel : MonoBehaviour
 
     public void LoadButton(DayButtonJSON dayButtonJson)
     {
-        DayButton dayButton = Instantiate(DayButtonPrefab, DaysPanel);
+        DayButton dayButton = DaysPanel.AddDayButton();
 
         DayInfo info = new DayInfo();
         DayInfoJSON jsonInfo = dayButtonJson.DayInfo;

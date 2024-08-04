@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a4f19821-2472-4753-9128-d0353b521012" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/NewDayCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/NewDayCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/SaveLoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/SaveLoadManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ColorChangeToggle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CreateCategoryButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CustomToggleGroup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/DaysPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/Screen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ScreenStatesSwitcher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/SwitchScreenButton.cs" root0="FORCE_HIGHLIGHTING" />
@@ -92,7 +92,7 @@
       <workItem from="1721473616071" duration="3524000" />
       <workItem from="1721484254882" duration="4822000" />
       <workItem from="1721721587018" duration="21578000" />
-      <workItem from="1722754436098" duration="1306000" />
+      <workItem from="1722754436098" duration="3171000" />
     </task>
     <servers />
   </component>
