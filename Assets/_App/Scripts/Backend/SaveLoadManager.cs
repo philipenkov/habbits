@@ -60,6 +60,8 @@ public class SaveLoadManager : MonoBehaviour
         currentDayInfoPanel.OnInfoChanged += SaveDayInfo;
         LoadCategories();
     }
+    
+    //======================SAVE:=========================
 
     private void SaveCategoryDeletion(CategoryPanel categoryPanel, int formerId)
     {
@@ -73,18 +75,18 @@ public class SaveLoadManager : MonoBehaviour
         SaveToPath();
     }
 
+    public void SaveCategoryAfterNewDaysCreated(CategoryPanel categoryPanel, int categoryId)
+    {
+        SaveCategoryById(categoryPanel, categoryId, true);
+        SaveToPath();
+    }
+
     private void SaveToPath()
     {
         string path = System.IO.Path.Combine(Application.persistentDataPath, "nhabits_save.json");
         SaveToJson(path);
     }
-
-    public bool LoadCategories()
-    {
-        string path = System.IO.Path.Combine(Application.persistentDataPath, "nhabits_save.json");
-        return LoadFromJson(path);
-    }
-
+    
     private void SaveToJson(string path)
     {
         string json = JsonUtility.ToJson(CategoriesHolderJson, true);
@@ -92,23 +94,7 @@ public class SaveLoadManager : MonoBehaviour
         Debug.Log("JSON saved: " + json);
     }
 
-    private bool LoadFromJson(string path)
-    {
-        if (System.IO.File.Exists(path))
-        {
-            string json = System.IO.File.ReadAllText(path);
-            CategoriesHolderJson = JsonUtility.FromJson<CategoriesHolderJSON>(json);
-            TransferJsonToCategories();
-            OnLoaded?.Invoke();
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    private void SaveCategoryById(CategoryPanel categoryPanel, int id)
+    private void SaveCategoryById(CategoryPanel categoryPanel, int id, bool saveDays = false)
     {
         List<CategoryPanelJSON> categoriesJson = CategoriesHolderJson.Categories;
         int newId = 0;
@@ -129,7 +115,7 @@ public class SaveLoadManager : MonoBehaviour
         categoriesJson[newId].Count = categoryPanel.Counter.text;
         categoriesJson[newId].Header = categoryPanel.Header.text;
 
-        if (!isNewCategory)
+        if (!isNewCategory && !saveDays)
         {
             return;
         }
@@ -156,6 +142,30 @@ public class SaveLoadManager : MonoBehaviour
         SaveToPath();
     }
 
+    //======================LOAD:=========================
+
+    public bool LoadCategories()
+    {
+        string path = System.IO.Path.Combine(Application.persistentDataPath, "nhabits_save.json");
+        return LoadFromJson(path);
+    }
+
+    private bool LoadFromJson(string path)
+    {
+        if (System.IO.File.Exists(path))
+        {
+            string json = System.IO.File.ReadAllText(path);
+            CategoriesHolderJson = JsonUtility.FromJson<CategoriesHolderJSON>(json);
+            TransferJsonToCategories();
+            OnLoaded?.Invoke();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
     private void TransferJsonToCategories()
     {
         List<CategoryPanelJSON> categoriesJson = CategoriesHolderJson.Categories;
@@ -166,7 +176,7 @@ public class SaveLoadManager : MonoBehaviour
                 int.Parse(categoriesJson[i].Count), categoriesJson[i]);
         }
     }
-
+    
     private DayInfoJSON GetDayInfoJson(DayInfo dayInfo)
     {
         DayInfoJSON dayInfoJson = new DayInfoJSON();

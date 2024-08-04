@@ -31,13 +31,26 @@ public class NewDayCreator : MonoBehaviour
         
         //TODO: если создать категорию и перезапустить - у нее появятся лищние дни
 
-        foreach (var category in CategoriesHolder.Categories)
+        for (int i = 0; i < CategoriesHolder.Categories.Count; i++)
         {
-            for (int i = 0; i < daysPassed; i++)
+            for (int j = 0; j < daysPassed; j++)
             {
-                category.CreateEmptyDayButton(missedDates[i]);
+                //TODO: добавляются дни. но не сохраняются в категории. Категория всегда с 1 днем
+                CategoriesHolder.Categories[i].CreateEmptyDayButton(missedDates[j]);
             }
+            
+            SaveLoadManager.SaveCategoryAfterNewDaysCreated(CategoriesHolder.Categories[i], i);
         }
+        
+        // foreach (var category in CategoriesHolder.Categories)
+        // {
+        //     for (int i = 0; i < daysPassed; i++)
+        //     {
+        //         category.CreateEmptyDayButton(missedDates[i]);
+        //     }
+        // }
+        
+        
     }
     
     private List<DateTime> GetMissedDates(DateTime lastLaunchDate, int daysPassed)

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a4f19821-2472-4753-9128-d0353b521012" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoriesHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoriesHolder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/NewDayCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/NewDayCreator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/SaveLoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/SaveLoadManager.cs" afterDir="false" />
     </list>
@@ -13,10 +13,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoriesHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryToExpandedSetter.cs" root0="FORCE_HIGHLIGHTING" />
@@ -68,10 +64,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21316">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="24204">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="21316" />
+      <option name="pid" value="24204" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -96,6 +92,7 @@
       <workItem from="1721473616071" duration="3524000" />
       <workItem from="1721484254882" duration="4822000" />
       <workItem from="1721721587018" duration="21578000" />
+      <workItem from="1722754436098" duration="1306000" />
     </task>
     <servers />
   </component>
@@ -123,30 +120,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoriesHolder.cs</url>
-          <line>26</line>
-          <properties documentPath="C:\Programming\Projects\HabbitsUnity\habbits\Assets\_App\Scripts\Backend\CategoriesHolder.cs" initialLine="25" containingFunctionPresentation="method 'LoadCategory'">
+          <url>file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/SaveLoadManager.cs</url>
+          <line>60</line>
+          <properties documentPath="C:\Programming\Projects\HabbitsUnity\habbits\Assets\_App\Scripts\Backend\SaveLoadManager.cs" initialLine="60" containingFunctionPresentation="method 'Start'">
             <startOffsets>
-              <option value="1001" />
+              <option value="1354" />
             </startOffsets>
             <endOffsets>
-              <option value="1002" />
+              <option value="1371" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryEditor.cs</url>
-          <line>33</line>
-          <properties documentPath="C:\Programming\Projects\HabbitsUnity\habbits\Assets\_App\Scripts\Backend\CategoryEditor.cs" initialLine="33" containingFunctionPresentation="method 'DeleteCategory'">
-            <startOffsets>
-              <option value="876" />
-            </startOffsets>
-            <endOffsets>
-              <option value="877" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="12" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
