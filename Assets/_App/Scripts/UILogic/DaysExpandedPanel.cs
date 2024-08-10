@@ -10,6 +10,7 @@ public class DaysExpandedPanel : MonoBehaviour
     public RectTransform ExpandedDaysParent;
     public Button PrevButton;
     public Button NextButton;
+    public PagesDisplay PagesDisplay;
 
     public List<ExpandedDay> ExpandedDays { get; private set; } = new List<ExpandedDay>();
     
@@ -27,6 +28,7 @@ public class DaysExpandedPanel : MonoBehaviour
         
         allDaysCount = dayButtons.Count;
         lastIdToShow = (allDaysCount - 1) - MaxDaysOnPage;
+        pagesCount = 1;
 
         if (lastIdToShow < 0)
             lastIdToShow = 0;
@@ -46,6 +48,8 @@ public class DaysExpandedPanel : MonoBehaviour
         }
         
         CheckButtonsActivity();
+        PagesDisplay.SetAllPages(pagesCount.ToString());
+        PagesDisplay.SetCurrentPage(currentPage.ToString());
     }
 
     public void ShowPreviousPage()
@@ -83,6 +87,7 @@ public class DaysExpandedPanel : MonoBehaviour
         }
         
         CheckButtonsActivity();
+        PagesDisplay.SetCurrentPage(currentPage.ToString());
     }
 
     public void ShowNextPage()
@@ -107,6 +112,7 @@ public class DaysExpandedPanel : MonoBehaviour
         }
         
         CheckButtonsActivity();
+        PagesDisplay.SetCurrentPage(currentPage.ToString());
     }
 
     private void DestroysAllChilds()
