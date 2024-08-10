@@ -7,12 +7,15 @@ using UnityEngine.UI;
 
 public class CategoryPanel : MonoBehaviour
 {
+    public event Action OnCategoryPanelInitialized; 
+
     public TMP_Text Header;
     public TMP_Text Counter;
     public Button EditButton;
 
     [Space]
     public DaysPanel DaysPanel;
+    public ComboCounter ComboCounter;
 
     public List<DayButton> DayButtons { get; private set; } = new List<DayButton>();
 
@@ -23,8 +26,14 @@ public class CategoryPanel : MonoBehaviour
 
     private void Start()
     {
+        Init();
+    }
+
+    private void Init()
+    {
         categoryEditor = FindObjectOfType<CategoryEditor>(true);
         EditButton.onClick.AddListener(Edit);
+        ComboCounter.CheckCombo();
     }
 
     private void Edit()
@@ -72,6 +81,11 @@ public class CategoryPanel : MonoBehaviour
     {
         DateTime dateTime = new DateTime(dateTimeJson.Year, dateTimeJson.Month, dateTimeJson.Day);
         return dateTime;
+    }
+
+    public void UpdateCombo()
+    {
+        ComboCounter.CheckCombo();
     }
 
     private void OnDestroy()

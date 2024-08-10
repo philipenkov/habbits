@@ -11902,7 +11902,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_StartCorner: 0
+  m_StartCorner: 3
   m_StartAxis: 0
   m_CellSize: {x: 120, y: 240}
   m_Spacing: {x: 30, y: 30}
@@ -13902,8 +13902,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EditDayInfoController: {fileID: 2131088013}
-  ExpandedDayPrefab: {fileID: 5358034788187593336, guid: fde781323d58b8743aaeba47a9a8e858, type: 3}
-  ExpandedDaysParent: {fileID: 1985861631}
   DaysExpandedPanel: {fileID: 1985861634}
 --- !u!1001 &2137533139
 PrefabInstance:
