@@ -805,9 +805,9 @@ RectTransform:
   - {fileID: 199982465}
   m_Father: {fileID: 884070979}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 810, y: -51.075}
   m_SizeDelta: {x: 98.6, y: 98.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &166534577
@@ -6001,7 +6001,6 @@ GameObject:
   - component: {fileID: 884070979}
   - component: {fileID: 884070982}
   - component: {fileID: 884070981}
-  - component: {fileID: 884070980}
   m_Layer: 0
   m_Name: NavigationButtons
   m_TagString: Untagged
@@ -6031,32 +6030,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -51.075012}
   m_SizeDelta: {x: 1080, y: 102.15}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &884070980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884070978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!114 &884070981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10657,9 +10630,9 @@ RectTransform:
   - {fileID: 1876520920}
   m_Father: {fileID: 884070979}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 270, y: -51.075}
   m_SizeDelta: {x: 98.6, y: 98.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684450357
@@ -11902,7 +11875,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_StartCorner: 3
+  m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 120, y: 240}
   m_Spacing: {x: 30, y: 30}

@@ -30,8 +30,13 @@ public class DaysExpandedPanel : MonoBehaviour
         lastIdToShow = (allDaysCount - 1) - MaxDaysOnPage;
         pagesCount = 1;
 
+        bool isOnePage = false;
+
         if (lastIdToShow < 0)
+        {
             lastIdToShow = 0;
+            isOnePage = true;
+        }
         else
         {
             pagesCount = Mathf.CeilToInt((float)allDaysCount / MaxDaysOnPage);
@@ -39,14 +44,27 @@ public class DaysExpandedPanel : MonoBehaviour
 
         currentPage = 1;
 
-        for (int i = allDaysCount - 1; i > lastIdToShow ; i--)
+        if (isOnePage)
         {
-            var expandedDayObj = Instantiate(ExpandedDayPrefab, ExpandedDaysParent);
-            ExpandedDay expandedDay = expandedDayObj.GetComponent<ExpandedDay>();
-            ExpandedDays.Add(expandedDay);
-            expandedDay.SetExpandedDay(dayButtons[i].DayInfo);
+            for (int i = allDaysCount - 1; i >= lastIdToShow ; i--)
+            {
+                var expandedDayObj = Instantiate(ExpandedDayPrefab, ExpandedDaysParent);
+                ExpandedDay expandedDay = expandedDayObj.GetComponent<ExpandedDay>();
+                ExpandedDays.Add(expandedDay);
+                expandedDay.SetExpandedDay(dayButtons[i].DayInfo);
+            }   
         }
-        
+        else
+        {
+            for (int i = allDaysCount - 1; i > lastIdToShow ; i--)
+            {
+                var expandedDayObj = Instantiate(ExpandedDayPrefab, ExpandedDaysParent);
+                ExpandedDay expandedDay = expandedDayObj.GetComponent<ExpandedDay>();
+                ExpandedDays.Add(expandedDay);
+                expandedDay.SetExpandedDay(dayButtons[i].DayInfo);
+            }
+        }
+
         CheckButtonsActivity();
         PagesDisplay.SetAllPages(pagesCount.ToString());
         PagesDisplay.SetCurrentPage(currentPage.ToString());
