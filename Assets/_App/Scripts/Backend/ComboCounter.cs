@@ -49,12 +49,24 @@ public class ComboCounter : MonoBehaviour
             return;
          }
       }
+
+      missedDays = 0;
       
       for (int i = lastId - 2; i >= 0; i--)
       {
          if (CategoryPanel.DayButtons[i].DayInfo.IsFilled)
          {
             comboCount++;
+         }
+         else
+         {
+            missedDays++;
+         }
+         
+         if (missedDays >= 1)
+         {
+            CountText.text = comboCount.ToString();
+            return;
          }
       }
       
