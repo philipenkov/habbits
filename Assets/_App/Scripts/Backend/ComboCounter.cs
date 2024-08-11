@@ -39,7 +39,7 @@ public class ComboCounter : MonoBehaviour
 
          if (i == lastId - 1 && !CategoryPanel.DayButtons[i].DayInfo.IsFilled)
          {
-            ResetComboCount(ref comboCount);
+            CountText.text = comboCount.ToString();
             return;
          }
 
