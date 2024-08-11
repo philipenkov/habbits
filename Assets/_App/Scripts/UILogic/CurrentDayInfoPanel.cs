@@ -15,6 +15,7 @@ public class CurrentDayInfoPanel : MonoBehaviour
     public TMP_InputField Info;
     public Image ColorStripe;
     public DaysExpandedPanel DaysExpandedPanel;
+    public Button ClearButton;
 
     private DayInfo currentDayInfo;
 
@@ -35,6 +36,8 @@ public class CurrentDayInfoPanel : MonoBehaviour
         Info.text = dayInfo.Info;
         currentDayInfo = dayInfo;
         ColorStripe.color = dayInfo.CategoryPanel.ColorTheme;
+
+        ClearButton.gameObject.SetActive(!dayInfo.IsFilled);
     }
 
     public void DoneEditingDay()
