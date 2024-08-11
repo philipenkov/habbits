@@ -19,6 +19,7 @@ public class ExpandedDay : MonoBehaviour
     public TMP_Text MonthTMP;
     public TMP_Text YearTMP;
     public Image NotesIcon;
+    public Color DefaultColor;
 
     private bool isFilled;
     private CurrentDayInfoPanel currentDayInfoPanel;
@@ -69,5 +70,10 @@ public class ExpandedDay : MonoBehaviour
     public void SwitchNotesIcon(bool value)
     {
         NotesIcon.enabled = value;
+    }
+
+    public void ChangeColor(Color newColor)
+    {
+        ColorFrame.color = newColor;
     }
 }

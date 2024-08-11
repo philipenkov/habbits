@@ -37,7 +37,7 @@ public class CurrentDayInfoPanel : MonoBehaviour
         currentDayInfo = dayInfo;
         ColorStripe.color = dayInfo.CategoryPanel.ColorTheme;
 
-        ClearButton.gameObject.SetActive(!dayInfo.IsFilled);
+        ClearButton.gameObject.SetActive(dayInfo.IsFilled);
     }
 
     public void DoneEditingDay()
@@ -46,11 +46,26 @@ public class CurrentDayInfoPanel : MonoBehaviour
         currentDayInfo.IsFilled = true;
         currentDayInfo.Info = Info.text;
         DayButton dayButton = currentDayInfo.CategoryPanel.DayButtons.Find(button => button.DayInfo == currentDayInfo);
-        dayButton.ButtonImage.color = colorToSet;
+        dayButton.ChangeColor(colorToSet);
         ExpandedDay expandedDay = DaysExpandedPanel.ExpandedDays.Find(day => day.LinkedDayInfo == currentDayInfo);
-        expandedDay.ColorFrame.color = colorToSet;
+        expandedDay.ChangeColor(colorToSet);
         expandedDay.SwitchNotesIcon(!string.IsNullOrEmpty(currentDayInfo.Info));
         currentDayInfo.CategoryPanel.UpdateCombo();
+        OnInfoChanged?.Invoke(currentDayInfo);
+    }
+
+    public void ClearDay()
+    {
+        currentDayInfo.IsFilled = false;
+        currentDayInfo.Info = "";
+        Info.text = "";
+        DayButton dayButton = currentDayInfo.CategoryPanel.DayButtons.Find(button => button.DayInfo == currentDayInfo);
+        dayButton.ChangeColor(dayButton.DefaultColor);
+        ExpandedDay expandedDay = DaysExpandedPanel.ExpandedDays.Find(day => day.LinkedDayInfo == currentDayInfo);
+        expandedDay.ChangeColor(expandedDay.DefaultColor);
+        expandedDay.SwitchNotesIcon(false);
+        currentDayInfo.CategoryPanel.UpdateCombo();
+        ClearButton.gameObject.SetActive(false);
         OnInfoChanged?.Invoke(currentDayInfo);
     }
 }

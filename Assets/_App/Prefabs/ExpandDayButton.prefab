@@ -584,6 +584,7 @@ MonoBehaviour:
   MonthTMP: {fileID: 7344100592186873631}
   YearTMP: {fileID: 5062247246228127581}
   NotesIcon: {fileID: 3145869477015471218}
+  DefaultColor: {r: 0.3882353, g: 0.3882353, b: 0.3882353, a: 1}
 --- !u!95 &7376917888654116195
 Animator:
   serializedVersion: 5

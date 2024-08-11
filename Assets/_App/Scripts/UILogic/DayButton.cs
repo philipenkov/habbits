@@ -16,6 +16,7 @@ namespace _App.Scripts.UILogic
     {
         public Button Button;
         public Image ButtonImage;
+        public Color DefaultColor;
 
         public DayInfo DayInfo { get; private set; }
         
