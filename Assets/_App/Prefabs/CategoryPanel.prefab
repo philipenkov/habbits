@@ -378,7 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1159039552933944556}
   - component: {fileID: 5192975823772181363}
-  - component: {fileID: 4245505587475291483}
+  - component: {fileID: 3211570317772090129}
   m_Layer: 0
   m_Name: Header
   m_TagString: Untagged
@@ -413,7 +413,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4344476645020324540}
   m_CullTransparentMesh: 1
---- !u!114 &4245505587475291483
+--- !u!114 &3211570317772090129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4344476645020324540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 142862eacae1fc34db32964b32f0585a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4287795859
-  m_fontColor: {r: 0.5754717, g: 0.5727572, b: 0.5727572, a: 1}
+  m_fontColor: {r: 0.5764706, g: 0.57254905, b: 0.57254905, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -464,11 +464,11 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 30
   m_fontSizeMax: 36
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -502,6 +502,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+  m_monospaceDistEm: 0
 --- !u!1 &4887458237632998737
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6e4bd28c6d43b48a235d3801599f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Header: {fileID: 4245505587475291483}
+  Header: {fileID: 3211570317772090129}
   Counter: {fileID: 4398959933628404469}
   EditButton: {fileID: 8469487800897916048}
   DaysPanel: {fileID: 7364177555312715358}

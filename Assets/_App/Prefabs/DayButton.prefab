@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Button: {fileID: 4643178788557147431}
   ButtonImage: {fileID: 3551462361389967218}
-  DefaultColor: {r: 0.76862746, g: 0.76862746, b: 0.76862746, a: 1}
+  DefaultColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
 --- !u!114 &5044684924571402823
 MonoBehaviour:
   m_ObjectHideFlags: 0
