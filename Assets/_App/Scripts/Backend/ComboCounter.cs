@@ -12,6 +12,20 @@ public class ComboCounter : MonoBehaviour
       int comboCount = 0;
       int missedDays = 0;
 
+      if (lastId <= 1)
+      {
+         for (int i = 0; i < CategoryPanel.DayButtons.Count; i++)
+         {
+            if (CategoryPanel.DayButtons[i].DayInfo.IsFilled)
+            {
+               comboCount++;
+            }
+         }
+         
+         CountText.text = comboCount.ToString();
+         return;
+      }
+
       for (int i = lastId; i > lastId - 2; i--)
       {
          if (CategoryPanel.DayButtons[i].DayInfo.IsFilled)
@@ -23,10 +37,15 @@ public class ComboCounter : MonoBehaviour
             missedDays++;
          }
 
+         if (i == lastId - 1 && !CategoryPanel.DayButtons[i].DayInfo.IsFilled)
+         {
+            ResetComboCount(ref comboCount);
+            return;
+         }
+
          if (missedDays >= 2)
          {
-            comboCount = 0;
-            CountText.text = comboCount.ToString();
+            ResetComboCount(ref comboCount);
             return;
          }
       }
@@ -37,10 +56,14 @@ public class ComboCounter : MonoBehaviour
          {
             comboCount++;
          }
-         else
-         {
-            CountText.text = comboCount.ToString();
-         }
       }
+      
+      CountText.text = comboCount.ToString();
+   }
+
+   private void ResetComboCount(ref int comboCount)
+   {
+      comboCount = 0;
+      CountText.text = comboCount.ToString();
    }
 }
