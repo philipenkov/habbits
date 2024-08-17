@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a4f19821-2472-4753-9128-d0353b521012" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_App/Prefabs/DayButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Prefabs/DayButton.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CurrentDayInfoPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CurrentDayInfoPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/DaysExpandedPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/DaysExpandedPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ExpandedDay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ExpandedDay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/DayButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/DayButton.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,14 +14,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoriesHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryToExpandedSetter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/ColorHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/ComboCounter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/EditDayInfoController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/NewDayCreator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/SFXSoundSender.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Sound/ClickSoundPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ColorChangeToggle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CreateCategoryButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CustomToggleGroup.cs" root0="FORCE_HIGHLIGHTING" />
@@ -28,6 +30,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/Screen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ScreenStatesSwitcher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/SwitchScreenButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_App/Scripts/Utils/ButtonClickRecieverUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.kyub.emojisearch@b240b89d33/Runtime/Scripts/TMP_EmojiTextUGUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c0b7b90d34a54066a7234dad6925511646ac00/df/3b40d5e5/List`1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -44,6 +48,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.build.unityPlugin&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -67,10 +72,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3100">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="3100" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -96,7 +101,8 @@
       <workItem from="1721484254882" duration="4822000" />
       <workItem from="1721721587018" duration="21578000" />
       <workItem from="1722754436098" duration="20414000" />
-      <workItem from="1723309119346" duration="2522000" />
+      <workItem from="1723309119346" duration="19483000" />
+      <workItem from="1723895937933" duration="1530000" />
     </task>
     <servers />
   </component>
@@ -124,17 +130,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ExpandedDay.cs</url>
-          <line>41</line>
-          <properties documentPath="C:\Programming\Projects\HabbitsUnity\habbits\Assets\_App\Scripts\UILogic\ExpandedDay.cs" initialLine="41" containingFunctionPresentation="method 'SetButtonInfo'">
+          <url>file://$PROJECT_DIR$/Assets/_App/Scripts/Backend/ComboCounter.cs</url>
+          <line>9</line>
+          <properties documentPath="C:\Programming\Projects\HabbitsUnity\habbits\Assets\_App\Scripts\Backend\ComboCounter.cs" initialLine="9" containingFunctionPresentation="method 'CheckCombo'">
             <startOffsets>
-              <option value="1210" />
+              <option value="178" />
             </startOffsets>
             <endOffsets>
-              <option value="1211" />
+              <option value="179" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

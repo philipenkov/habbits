@@ -47,6 +47,7 @@ public class CurrentDayInfoPanel : MonoBehaviour
         currentDayInfo.Info = Info.text;
         DayButton dayButton = currentDayInfo.CategoryPanel.DayButtons.Find(button => button.DayInfo == currentDayInfo);
         dayButton.ChangeColor(colorToSet);
+        dayButton.CheckInfoIndicator(currentDayInfo.Info);
         ExpandedDay expandedDay = DaysExpandedPanel.ExpandedDays.Find(day => day.LinkedDayInfo == currentDayInfo);
         expandedDay.ChangeColor(colorToSet);
         expandedDay.SwitchNotesIcon(!string.IsNullOrEmpty(currentDayInfo.Info));
@@ -61,6 +62,7 @@ public class CurrentDayInfoPanel : MonoBehaviour
         Info.text = "";
         DayButton dayButton = currentDayInfo.CategoryPanel.DayButtons.Find(button => button.DayInfo == currentDayInfo);
         dayButton.ChangeColor(dayButton.DefaultColor);
+        dayButton.CheckInfoIndicator(currentDayInfo.Info);
         ExpandedDay expandedDay = DaysExpandedPanel.ExpandedDays.Find(day => day.LinkedDayInfo == currentDayInfo);
         expandedDay.ChangeColor(expandedDay.DefaultColor);
         expandedDay.SwitchNotesIcon(false);

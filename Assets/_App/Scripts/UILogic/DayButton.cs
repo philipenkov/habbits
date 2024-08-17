@@ -16,6 +16,7 @@ namespace _App.Scripts.UILogic
     {
         public Button Button;
         public Image ButtonImage;
+        public Image InfoIndicator;
         public Color DefaultColor;
 
         public DayInfo DayInfo { get; private set; }
@@ -32,11 +33,18 @@ namespace _App.Scripts.UILogic
             DayInfo = initDayInfo;
             if (DayInfo.IsFilled)
                 ChangeColor(DayInfo.CategoryPanel.ColorTheme);
+
+            CheckInfoIndicator(DayInfo.Info);
         }
 
         public void ChangeColor(Color newColor)
         {
             ButtonImage.color = newColor;
+        }
+
+        public void CheckInfoIndicator(string info)
+        {
+            InfoIndicator.enabled = DayInfo.Info != string.Empty;
         }
 
         private void SendPressedButtonSignal()
