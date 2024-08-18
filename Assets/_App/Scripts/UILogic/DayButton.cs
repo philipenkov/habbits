@@ -39,11 +39,17 @@ namespace _App.Scripts.UILogic
 
         public void ChangeColor(Color newColor)
         {
+            if (ButtonImage == null)
+                return;
+            
             ButtonImage.color = newColor;
         }
 
         public void CheckInfoIndicator(string info)
         {
+            if (InfoIndicator == null)
+                return;
+            
             InfoIndicator.enabled = DayInfo.Info != string.Empty;
         }
 

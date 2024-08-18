@@ -55,9 +55,14 @@ public class CurrentDayInfoPanel : MonoBehaviour
         DayButton dayButton = currentDayInfo.CategoryPanel.DayButtons.Find(button => button.DayInfo == currentDayInfo);
         dayButton.ChangeColor(colorToSet);
         dayButton.CheckInfoIndicator(currentDayInfo.Info);
+        
         ExpandedDay expandedDay = DaysExpandedPanel.ExpandedDays.Find(day => day.LinkedDayInfo == currentDayInfo);
-        expandedDay.ChangeColor(colorToSet);
-        expandedDay.SwitchNotesIcon(!string.IsNullOrEmpty(currentDayInfo.Info));
+        if (expandedDay != null)
+        {
+            expandedDay.ChangeColor(colorToSet);
+            expandedDay.SwitchNotesIcon(!string.IsNullOrEmpty(currentDayInfo.Info));
+        }
+        
         currentDayInfo.CategoryPanel.UpdateCombo();
         OnInfoChanged?.Invoke(currentDayInfo);
     }
@@ -70,9 +75,15 @@ public class CurrentDayInfoPanel : MonoBehaviour
         DayButton dayButton = currentDayInfo.CategoryPanel.DayButtons.Find(button => button.DayInfo == currentDayInfo);
         dayButton.ChangeColor(dayButton.DefaultColor);
         dayButton.CheckInfoIndicator(currentDayInfo.Info);
+        
         ExpandedDay expandedDay = DaysExpandedPanel.ExpandedDays.Find(day => day.LinkedDayInfo == currentDayInfo);
-        expandedDay.ChangeColor(expandedDay.DefaultColor);
-        expandedDay.SwitchNotesIcon(false);
+
+        if (expandedDay != null)
+        {
+            expandedDay.ChangeColor(expandedDay.DefaultColor);
+            expandedDay.SwitchNotesIcon(false);
+        }
+        
         currentDayInfo.CategoryPanel.UpdateCombo();
         ClearButton.gameObject.SetActive(false);
         OnInfoChanged?.Invoke(currentDayInfo);
