@@ -14272,6 +14272,7 @@ MonoBehaviour:
   PrevButton: {fileID: 1684450357}
   NextButton: {fileID: 166534577}
   PagesDisplay: {fileID: 1230460200}
+  CurrentExtendedButtonSelector: {fileID: 1901038477}
 --- !u!1 &1986379740
 GameObject:
   m_ObjectHideFlags: 0

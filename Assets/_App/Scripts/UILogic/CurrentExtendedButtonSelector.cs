@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class CurrentExtendedButtonSelector : MonoBehaviour
 {
+    public event Action<ExpandedDay> OnExpandedDaySelected;
+    
     private ExpandedDay[] expandedDays;
 
     public void UpdateSelection(ExpandedDay expandedDay)
@@ -14,6 +16,7 @@ public class CurrentExtendedButtonSelector : MonoBehaviour
             if (day == expandedDay)
             {
                 day.SelectedBg.SwitchActivation(true);
+                OnExpandedDaySelected?.Invoke(day);
                 continue;
             }
             

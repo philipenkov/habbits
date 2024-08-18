@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using _App.Scripts.UILogic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class DaysExpandedPanel : MonoBehaviour
     public Button PrevButton;
     public Button NextButton;
     public PagesDisplay PagesDisplay;
+    public CurrentExtendedButtonSelector CurrentExtendedButtonSelector;
 
     public List<ExpandedDay> ExpandedDays { get; private set; } = new List<ExpandedDay>();
     
@@ -19,6 +21,12 @@ public class DaysExpandedPanel : MonoBehaviour
     private int lastIdToShow;
     private int allDaysCount;
     private List<DayButton> cachedDayButtons = new List<DayButton>();
+    private ExpandedDay lastSelectedExpandedDay;
+
+    private void Start()
+    {
+        CurrentExtendedButtonSelector.OnExpandedDaySelected += CacheLastSelectedExpandedButton;
+    }
 
     public void InstantiateExpandedDays(List<DayButton> dayButtons)
     {
@@ -107,6 +115,7 @@ public class DaysExpandedPanel : MonoBehaviour
         }
         
         CheckButtonsActivity();
+        CheckIfSelectionOfDayNeeded();
         PagesDisplay.SetCurrentPage(currentPage.ToString());
     }
 
@@ -132,6 +141,7 @@ public class DaysExpandedPanel : MonoBehaviour
         }
         
         CheckButtonsActivity();
+        CheckIfSelectionOfDayNeeded();
         PagesDisplay.SetCurrentPage(currentPage.ToString());
     }
 
@@ -147,5 +157,21 @@ public class DaysExpandedPanel : MonoBehaviour
     {
         PrevButton.gameObject.SetActive(currentPage < pagesCount);
         NextButton.gameObject.SetActive(currentPage > 1);
+    }
+
+    private void CacheLastSelectedExpandedButton(ExpandedDay expandedDay)
+    {
+        lastSelectedExpandedDay = expandedDay; 
+    }
+
+    private void CheckIfSelectionOfDayNeeded()
+    {
+        ExpandedDay dayToSelect = ExpandedDays.Find(day => day.LinkedDayInfo == lastSelectedExpandedDay.LinkedDayInfo);
+        CurrentExtendedButtonSelector.UpdateSelection(dayToSelect);
+    }
+
+    private void OnDestroy()
+    {
+        CurrentExtendedButtonSelector.OnExpandedDaySelected -= CacheLastSelectedExpandedButton;
     }
 }
