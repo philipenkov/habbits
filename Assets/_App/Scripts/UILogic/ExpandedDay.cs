@@ -20,10 +20,18 @@ public class ExpandedDay : MonoBehaviour
     public TMP_Text YearTMP;
     public Image NotesIcon;
     public Color DefaultColor;
+    public ExtendedDaySelectedBG SelectedBg;
 
+    private CurrentExtendedButtonSelector buttonSelector;
     private bool isFilled;
     private CurrentDayInfoPanel currentDayInfoPanel;
     private string shortMonthName;
+
+    private void Awake()
+    {
+        if (buttonSelector == null)
+            buttonSelector = FindObjectOfType<CurrentExtendedButtonSelector>(true);
+    }
 
     public void SetExpandedDay(DayInfo dayInfo)
     {
@@ -35,6 +43,7 @@ public class ExpandedDay : MonoBehaviour
         Info = dayInfo.Info;
         isFilled = dayInfo.IsFilled;
         LinkedDayInfo = dayInfo;
+        SelectedBg.Init(dayInfo);
         
         SetButtonInfo(dayInfo.CategoryPanel.ColorTheme);
     }
@@ -65,6 +74,12 @@ public class ExpandedDay : MonoBehaviour
             currentDayInfoPanel = FindObjectOfType<CurrentDayInfoPanel>();
         
         currentDayInfoPanel.Set(LinkedDayInfo);
+        MarkAsSelected();
+    }
+
+    public void MarkAsSelected()
+    {
+        buttonSelector.UpdateSelection(this);
     }
 
     public void SwitchNotesIcon(bool value)

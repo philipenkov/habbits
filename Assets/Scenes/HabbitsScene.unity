@@ -13225,6 +13225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1901038475}
   - component: {fileID: 1901038476}
+  - component: {fileID: 1901038477}
   m_Layer: 0
   m_Name: ExpandedDaysHolder
   m_TagString: Untagged
@@ -13275,6 +13276,18 @@ MonoBehaviour:
   m_Spacing: {x: 30, y: 30}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1901038477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901038474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfff14d9688d5548af0e505381dff77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1906786643 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5917777688278588701, guid: 38e3cfb8dc15346409b1f4d620c5c7f2, type: 3}

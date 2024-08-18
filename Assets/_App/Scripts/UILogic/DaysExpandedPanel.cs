@@ -48,26 +48,28 @@ public class DaysExpandedPanel : MonoBehaviour
         {
             for (int i = lastIdToShow; i < allDaysCount; i++)
             {
-                var expandedDayObj = Instantiate(ExpandedDayPrefab, ExpandedDaysParent);
-                ExpandedDay expandedDay = expandedDayObj.GetComponent<ExpandedDay>();
-                ExpandedDays.Add(expandedDay);
-                expandedDay.SetExpandedDay(dayButtons[i].DayInfo);
+                InstantiateExpandedDay(dayButtons[i].DayInfo);
             }   
         }
         else
         {
             for (int i = lastIdToShow + 1; i < allDaysCount; i++)
             {
-                var expandedDayObj = Instantiate(ExpandedDayPrefab, ExpandedDaysParent);
-                ExpandedDay expandedDay = expandedDayObj.GetComponent<ExpandedDay>();
-                ExpandedDays.Add(expandedDay);
-                expandedDay.SetExpandedDay(dayButtons[i].DayInfo);
+                InstantiateExpandedDay(dayButtons[i].DayInfo);
             }
         }
 
         CheckButtonsActivity();
         PagesDisplay.SetAllPages(pagesCount.ToString());
         PagesDisplay.SetCurrentPage(currentPage.ToString());
+    }
+
+    private void InstantiateExpandedDay(DayInfo dayInfo)
+    {
+        var expandedDayObj = Instantiate(ExpandedDayPrefab, ExpandedDaysParent);
+        ExpandedDay expandedDay = expandedDayObj.GetComponent<ExpandedDay>();
+        ExpandedDays.Add(expandedDay);
+        expandedDay.SetExpandedDay(dayInfo);
     }
 
     public void ShowPreviousPage()

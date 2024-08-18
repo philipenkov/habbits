@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Globalization;
 using _App.Scripts.UILogic;
 using TMPro;
@@ -19,14 +20,6 @@ public class CurrentDayInfoPanel : MonoBehaviour
 
     private DayInfo currentDayInfo;
 
-    public void Set(ExpandedDay expandedDay)
-    {
-        Day.text = expandedDay.Day.ToString();
-        Month.text = expandedDay.Month;
-        Year.text = expandedDay.Year.ToString();
-        Info.text = expandedDay.Info;
-    }
-    
     public void Set(DayInfo dayInfo)
     {
         Day.text = dayInfo.DateTime.Day.ToString();
@@ -38,6 +31,20 @@ public class CurrentDayInfoPanel : MonoBehaviour
         ColorStripe.color = dayInfo.CategoryPanel.ColorTheme;
 
         ClearButton.gameObject.SetActive(dayInfo.IsFilled);
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(DelayBeforeMarkAsSelected());
+    }
+
+    private IEnumerator DelayBeforeMarkAsSelected()
+    {
+        yield return new WaitForEndOfFrame();
+        ExpandedDay expandedDay = DaysExpandedPanel.ExpandedDays.Find(day => day.LinkedDayInfo == currentDayInfo);
+        
+        if (expandedDay != null)
+            expandedDay.MarkAsSelected();
     }
 
     public void DoneEditingDay()
