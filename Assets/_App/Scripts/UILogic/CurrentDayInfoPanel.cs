@@ -64,6 +64,8 @@ public class CurrentDayInfoPanel : MonoBehaviour
             expandedDay.PlaySaveEffect();
         }
         
+        ClearButton.gameObject.SetActive(currentDayInfo.IsFilled);
+        
         currentDayInfo.CategoryPanel.UpdateCombo();
         OnInfoChanged?.Invoke(currentDayInfo);
     }
