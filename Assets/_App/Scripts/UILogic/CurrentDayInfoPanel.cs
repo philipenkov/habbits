@@ -61,6 +61,7 @@ public class CurrentDayInfoPanel : MonoBehaviour
         {
             expandedDay.ChangeColor(colorToSet);
             expandedDay.SwitchNotesIcon(!string.IsNullOrEmpty(currentDayInfo.Info));
+            expandedDay.PlaySaveEffect();
         }
         
         currentDayInfo.CategoryPanel.UpdateCombo();

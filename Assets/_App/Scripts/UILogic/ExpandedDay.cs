@@ -21,6 +21,7 @@ public class ExpandedDay : MonoBehaviour
     public Image NotesIcon;
     public Color DefaultColor;
     public ExtendedDaySelectedBG SelectedBg;
+    public ParticleSystem SaveParticles;
 
     private CurrentExtendedButtonSelector buttonSelector;
     private bool isFilled;
@@ -90,5 +91,10 @@ public class ExpandedDay : MonoBehaviour
     public void ChangeColor(Color newColor)
     {
         ColorFrame.color = newColor;
+    }
+
+    public void PlaySaveEffect()
+    {
+        SaveParticles.Play();
     }
 }
