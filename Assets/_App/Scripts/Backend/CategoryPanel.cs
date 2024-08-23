@@ -16,6 +16,7 @@ public class CategoryPanel : MonoBehaviour
     [Space]
     public DaysPanel DaysPanel;
     public ComboCounter ComboCounter;
+    public GameObject ReplaceToggle;
 
     public List<DayButton> DayButtons { get; private set; } = new List<DayButton>();
 
@@ -81,6 +82,11 @@ public class CategoryPanel : MonoBehaviour
     {
         DateTime dateTime = new DateTime(dateTimeJson.Year, dateTimeJson.Month, dateTimeJson.Day);
         return dateTime;
+    }
+
+    public void SwitchReplaceToggle(bool value)
+    {
+        ReplaceToggle.SetActive(value);
     }
 
     public void UpdateCombo()

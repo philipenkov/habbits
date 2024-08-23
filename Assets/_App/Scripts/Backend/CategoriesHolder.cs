@@ -48,4 +48,29 @@ public class CategoriesHolder : MonoBehaviour
     {
         OnNewCategoriesChanged?.Invoke(categoryPanel, Categories.IndexOf(categoryPanel));
     }
+
+    public void ReplaceCategory(int replacingId, int idToReplace)
+    {
+        // Проверка допустимости индексов
+        if (replacingId < 0 || replacingId >= Categories.Count || idToReplace < 0 || idToReplace > Categories.Count)
+        {
+            Debug.LogWarning("Invalid indices provided for replacing or inserting categories.");
+            return;
+        }
+
+        // Извлекаем объект, который нужно переместить
+        CategoryPanel categoryToMove = Categories[replacingId];
+
+        // Удаляем его из списка
+        Categories.RemoveAt(replacingId);
+
+        // Если перемещаемый объект идёт до целевого, то индекс для вставки нужно уменьшить на единицу
+        if (replacingId < idToReplace)
+        {
+            idToReplace--;
+        }
+
+        // Вставляем объект в новое место
+        Categories.Insert(idToReplace, categoryToMove);
+    }
 }
