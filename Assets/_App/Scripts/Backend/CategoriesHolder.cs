@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CategoriesHolder : MonoBehaviour
 {
@@ -60,18 +61,14 @@ public class CategoriesHolder : MonoBehaviour
 
         // Извлекаем объект, который нужно переместить
         CategoryPanel categoryToMove = Categories[replacingId];
+        Categories[idToReplace].ReplaceToggle.GetComponent<Toggle>().SetIsOnWithoutNotify(false);
 
         // Удаляем его из списка
         Categories.RemoveAt(replacingId);
-
-        // Если перемещаемый объект идёт до целевого, то индекс для вставки нужно уменьшить на единицу
-        // if (replacingId < idToReplace)
-        // {
-        //     idToReplace--;
-        // }
-
+        
         // Вставляем объект в новое место
         Categories.Insert(idToReplace, categoryToMove);
         categoryToMove.transform.SetSiblingIndex(idToReplace);
+        categoryToMove.ReplaceToggle.GetComponent<Toggle>().SetIsOnWithoutNotify(false);
     }
 }
