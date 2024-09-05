@@ -75,6 +75,33 @@ public class SaveLoadManager : MonoBehaviour
         SaveToPath();
     }
 
+    public void SaveReplacedCategories(int replacingId, int idToReplace)
+    {
+        CategoryPanelJSON categoryToMove = CategoriesHolderJson.Categories[replacingId];
+        CategoriesHolderJson.Categories.RemoveAt(replacingId);
+        CategoriesHolderJson.Categories.Insert(idToReplace, categoryToMove);
+
+        int startId = 0;
+        int endId = 0;
+        if (replacingId < idToReplace)
+        {
+            startId = replacingId;
+            endId = idToReplace;
+        }
+        else
+        {
+            startId = idToReplace;
+            endId = replacingId;
+        }
+
+        for (int i = startId; i <= endId; i++)
+        {
+            SaveCategoryById(CategoriesHolder.Categories[i], i);
+        }
+        
+        SaveToPath();
+    }
+
     public void SaveCategoryAfterNewDaysCreated(CategoryPanel categoryPanel, int categoryId)
     {
         SaveCategoryById(categoryPanel, categoryId, true);

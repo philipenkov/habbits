@@ -1,22 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CategoriesReplacer : MonoBehaviour
 {
     public CategoriesHolder CategoriesHolder;
-    
+
     private int firstId;
     private bool isFirstSet;
 
     private int secondId;
-    
-    //TODO: при включении этого режима отключать все остальные кнопки
+    private SaveLoadManager saveLoadManager;
 
     private void Start()
     {
         ReplaceToggleControllerUtils.Init(this, CategoriesHolder);
+        saveLoadManager = FindObjectOfType<SaveLoadManager>();
     }
 
     public void RegisterID(int id)
@@ -40,6 +37,7 @@ public class CategoriesReplacer : MonoBehaviour
     private void Replace()
     {
         CategoriesHolder.ReplaceCategory(firstId, secondId);
+        saveLoadManager.SaveReplacedCategories(firstId, secondId);
     }
 
     public void ResetReplacer()
