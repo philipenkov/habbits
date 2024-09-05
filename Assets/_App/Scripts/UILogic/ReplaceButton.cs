@@ -12,6 +12,8 @@ public class ReplaceButton : MonoBehaviour
     
     public void SwitchReplace()
     {
+        CreateCategoryButton.SetActive(isActivated);
+        
         if (isActivated)
         {
             CategoriesReplacer.ResetReplacer();
@@ -23,7 +25,5 @@ public class ReplaceButton : MonoBehaviour
         {
             category.SwitchReplaceToggle(isActivated);
         }
-        
-        CreateCategoryButton.SetActive(isActivated);
     }
 }

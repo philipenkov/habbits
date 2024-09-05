@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4f19821-2472-4753-9128-d0353b521012" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoriesReplacer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoriesReplacer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/SaveLoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/SaveLoadManager.cs" afterDir="false" />
-    </list>
+    <list default="true" id="a4f19821-2472-4753-9128-d0353b521012" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +99,7 @@
       <workItem from="1722754436098" duration="20414000" />
       <workItem from="1723309119346" duration="19483000" />
       <workItem from="1723895937933" duration="11671000" />
-      <workItem from="1725556658450" duration="1297000" />
+      <workItem from="1725556658450" duration="1691000" />
     </task>
     <servers />
   </component>
