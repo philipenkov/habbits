@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class CategoryPanel : MonoBehaviour
 {
-    public event Action OnCategoryPanelInitialized; 
+    //public event Action OnCategoryPanelInitialized; 
 
     public TMP_Text Header;
     public TMP_Text Counter;
