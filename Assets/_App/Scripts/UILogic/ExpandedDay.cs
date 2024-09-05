@@ -46,6 +46,12 @@ public class ExpandedDay : MonoBehaviour
         LinkedDayInfo = dayInfo;
         SelectedBg.Init(dayInfo);
         
+        var main = SaveParticles.main;
+        main.startColor = dayInfo.CategoryPanel.ColorTheme;
+        var trails = SaveParticles.trails;
+        trails.enabled = true;
+        trails.colorOverLifetime = new ParticleSystem.MinMaxGradient(dayInfo.CategoryPanel.ColorTheme);
+        
         SetButtonInfo(dayInfo.CategoryPanel.ColorTheme);
     }
 
