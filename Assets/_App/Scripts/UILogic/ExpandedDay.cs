@@ -21,12 +21,14 @@ public class ExpandedDay : MonoBehaviour
 
     private bool isFilled;
     private CurrentDayInfoPanel currentDayInfoPanel;
+    private string shortMonthName;
 
     public void SetExpandedDay(DayInfo dayInfo)
     {
         Day = dayInfo.DateTime.Day;
         CultureInfo cultureInfo = new CultureInfo("en-US");
         Month = dayInfo.DateTime.ToString("MMMM", cultureInfo);
+        shortMonthName = dayInfo.DateTime.ToString("MMM", cultureInfo);
         Year = dayInfo.DateTime.Year;
         Info = dayInfo.Info;
         isFilled = dayInfo.IsFilled;
@@ -38,7 +40,7 @@ public class ExpandedDay : MonoBehaviour
     private void SetButtonInfo(Color colorTheme)
     {
         DateTMP.text = Day.ToString();
-        MonthTMP.text = Month;
+        MonthTMP.text = shortMonthName;
         YearTMP.text = Year.ToString();
 
         if (Info != null || Info != "")

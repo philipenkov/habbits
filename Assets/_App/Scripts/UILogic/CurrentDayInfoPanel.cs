@@ -14,7 +14,7 @@ public class CurrentDayInfoPanel : MonoBehaviour
     public TMP_Text Year;
     public TMP_InputField Info;
     public Image ColorStripe;
-    public CategoryToExpandedSetter CategoryToExpandedSetter;
+    public DaysExpandedPanel DaysExpandedPanel;
 
     private DayInfo currentDayInfo;
 
@@ -44,7 +44,7 @@ public class CurrentDayInfoPanel : MonoBehaviour
         currentDayInfo.Info = Info.text;
         DayButton dayButton = currentDayInfo.CategoryPanel.DayButtons.Find(button => button.DayInfo == currentDayInfo);
         dayButton.ButtonImage.color = colorToSet;
-        ExpandedDay expandedDay = CategoryToExpandedSetter.ExpandedDays.Find(day => day.LinkedDayInfo == currentDayInfo);
+        ExpandedDay expandedDay = DaysExpandedPanel.ExpandedDays.Find(day => day.LinkedDayInfo == currentDayInfo);
         expandedDay.ColorFrame.color = colorToSet;
         OnInfoChanged?.Invoke(currentDayInfo);
     }
