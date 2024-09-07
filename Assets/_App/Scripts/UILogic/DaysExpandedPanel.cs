@@ -11,6 +11,7 @@ public class DaysExpandedPanel : MonoBehaviour
 
     public List<ExpandedDay> ExpandedDays { get; private set; } = new List<ExpandedDay>();
     private int currentPage;
+    private int pagesCount;
 
     public void InstantiateExpandedDays(List<DayButton> dayButtons)
     {
@@ -27,10 +28,8 @@ public class DaysExpandedPanel : MonoBehaviour
             lastId = 0;
         else
         {
-            //Вычесть, сколько всего страниц
+            pagesCount = Mathf.CeilToInt((float)allDaysCount / MaxDaysOnPage);
         }
-
-        //TODO: спаунить последний элемент, вычитать итератор, пока не будет достигнут максимум
 
         for (int i = allDaysCount - 1; i > lastId ; i--)
         {

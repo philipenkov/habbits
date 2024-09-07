@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a4f19821-2472-4753-9128-d0353b521012" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HabbitsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HabbitsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Prefabs/ExpandDayButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Prefabs/ExpandDayButton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryToExpandedSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/Backend/CategoryToExpandedSetter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CurrentDayInfoPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/CurrentDayInfoPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ExpandedDay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/ExpandedDay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/DaysExpandedPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/DaysExpandedPanel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +91,7 @@
       <workItem from="1721473616071" duration="3524000" />
       <workItem from="1721484254882" duration="4822000" />
       <workItem from="1721721587018" duration="21578000" />
-      <workItem from="1722754436098" duration="9313000" />
+      <workItem from="1722754436098" duration="9986000" />
     </task>
     <servers />
   </component>
@@ -134,6 +130,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_App/Scripts/UILogic/DaysExpandedPanel.cs</url>
+          <line>30</line>
+          <properties documentPath="C:\Programming\Projects\HabbitsUnity\habbits\Assets\_App\Scripts\UILogic\DaysExpandedPanel.cs" initialLine="30" containingFunctionPresentation="method 'InstantiateExpandedDays'">
+            <startOffsets>
+              <option value="838" />
+            </startOffsets>
+            <endOffsets>
+              <option value="904" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

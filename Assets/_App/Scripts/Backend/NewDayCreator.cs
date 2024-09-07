@@ -26,6 +26,9 @@ public class NewDayCreator : MonoBehaviour
 
         List<DateTime> missedDates = GetMissedDates(lastDayTime, daysPassed);
         
+        if (missedDates.Count == 0)
+            return;
+        
         for (int i = 0; i < CategoriesHolder.Categories.Count; i++)
         {
             for (int j = 0; j < daysPassed; j++)
