@@ -4,11 +4,7 @@ using UnityEngine;
 public class CategoryToExpandedSetter : MonoBehaviour
 {
     public EditDayInfoController EditDayInfoController;
-    public GameObject ExpandedDayPrefab;
-    public Transform ExpandedDaysParent;
     public DaysExpandedPanel DaysExpandedPanel;
-
-    private CategoryPanel currentPanelShown;
 
     private void Start()
     {
@@ -18,11 +14,6 @@ public class CategoryToExpandedSetter : MonoBehaviour
     private void SetupCategoryButtons(DayInfo dayInfo)
     {
         CategoryPanel categoryPanel = dayInfo.CategoryPanel;
-        
-        if (currentPanelShown == categoryPanel)
-            return;
-        
-        currentPanelShown = categoryPanel;
         DaysExpandedPanel.InstantiateExpandedDays(categoryPanel.DayButtons);
     }
 
