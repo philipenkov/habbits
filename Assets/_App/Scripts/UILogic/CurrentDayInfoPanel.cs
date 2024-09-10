@@ -46,6 +46,7 @@ public class CurrentDayInfoPanel : MonoBehaviour
         dayButton.ButtonImage.color = colorToSet;
         ExpandedDay expandedDay = DaysExpandedPanel.ExpandedDays.Find(day => day.LinkedDayInfo == currentDayInfo);
         expandedDay.ColorFrame.color = colorToSet;
+        expandedDay.SwitchNotesIcon(!string.IsNullOrEmpty(currentDayInfo.Info));
         OnInfoChanged?.Invoke(currentDayInfo);
     }
 }

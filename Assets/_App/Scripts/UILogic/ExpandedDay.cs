@@ -1,3 +1,4 @@
+using System;
 using System.Globalization;
 using _App.Scripts.UILogic;
 using TMPro;
@@ -42,16 +43,19 @@ public class ExpandedDay : MonoBehaviour
         DateTMP.text = Day.ToString();
         MonthTMP.text = shortMonthName;
         YearTMP.text = Year.ToString();
-
-        if (Info != null || Info != "")
-            NotesIcon.enabled = true;
-        else
-            NotesIcon.enabled = false;
-
+        
         if (isFilled)
         {
             ColorFrame.color = colorTheme;
         }
+
+        if (!string.IsNullOrEmpty(Info))
+        {
+            SwitchNotesIcon(true);
+            return;
+        }
+        
+        SwitchNotesIcon(false);
     }
 
     public void SendInfoToCurrentDayPanel()
@@ -60,5 +64,10 @@ public class ExpandedDay : MonoBehaviour
             currentDayInfoPanel = FindObjectOfType<CurrentDayInfoPanel>();
         
         currentDayInfoPanel.Set(LinkedDayInfo);
+    }
+
+    public void SwitchNotesIcon(bool value)
+    {
+        NotesIcon.enabled = value;
     }
 }

@@ -125,7 +125,7 @@ public class DaysExpandedPanel : MonoBehaviour
 
     private void CheckButtonsActivity()
     {
-        PrevButton.interactable = currentPage < pagesCount;
-        NextButton.interactable = currentPage > 1;
+        PrevButton.gameObject.SetActive(currentPage < pagesCount);
+        NextButton.gameObject.SetActive(currentPage > 1);
     }
 }
