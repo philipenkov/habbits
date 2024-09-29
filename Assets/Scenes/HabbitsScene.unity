@@ -6197,8 +6197,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 281.6499, y: -68.08003}
-  m_SizeDelta: {x: 141.4, y: 77.1}
+  m_AnchoredPosition: {x: 283, y: -68.08003}
+  m_SizeDelta: {x: 141.4, y: 61.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &793895200
 MonoBehaviour:
@@ -6269,14 +6269,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.52156866}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.43529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: abc949af558e2764a9925591d9562013, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed75d3af46bd10a43a6c5517eb1760e5, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -13213,8 +13213,8 @@ MonoBehaviour:
   m_StartAxis: 0
   m_CellSize: {x: 120, y: 240}
   m_Spacing: {x: 30, y: 30}
-  m_Constraint: 0
-  m_ConstraintCount: 2
+  m_Constraint: 1
+  m_ConstraintCount: 7
 --- !u!114 &1901038477
 MonoBehaviour:
   m_ObjectHideFlags: 0
