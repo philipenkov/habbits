@@ -853,7 +853,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 166534578}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1985861634}
+        m_TargetAssemblyTypeName: DaysExpandedPanel, Assembly-CSharp
+        m_MethodName: ShowNextPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &166534578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10216,7 +10228,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1684450358}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1985861634}
+        m_TargetAssemblyTypeName: DaysExpandedPanel, Assembly-CSharp
+        m_MethodName: ShowPreviousPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1684450358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12346,6 +12370,8 @@ MonoBehaviour:
   MaxDaysOnPage: 28
   ExpandedDayPrefab: {fileID: 4905876647244596511, guid: fde781323d58b8743aaeba47a9a8e858, type: 3}
   ExpandedDaysParent: {fileID: 1901038475}
+  PrevButton: {fileID: 1684450357}
+  NextButton: {fileID: 166534577}
 --- !u!1 &1986379740
 GameObject:
   m_ObjectHideFlags: 0
