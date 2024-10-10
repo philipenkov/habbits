@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using _App.Scripts.UILogic;
 using UnityEngine;
@@ -23,16 +22,9 @@ public class DaysExpandedPanel : MonoBehaviour
     public void InstantiateExpandedDays(List<DayButton> dayButtons)
     {
         cachedDayButtons = dayButtons;
-        
-        // NextButton.interactable = false;
-        // PrevButton.interactable = true;
-        
-        foreach (Transform child in ExpandedDaysParent)
-        {
-            Destroy(child.gameObject);
-        }
-        
+        DestroysAllChilds();
         ExpandedDays.Clear();
+        
         allDaysCount = dayButtons.Count;
         lastIdToShow = (allDaysCount - 1) - MaxDaysOnPage;
 
@@ -52,18 +44,16 @@ public class DaysExpandedPanel : MonoBehaviour
             ExpandedDays.Add(expandedDay);
             expandedDay.SetExpandedDay(dayButtons[i].DayInfo);
         }
+        
+        CheckButtonsActivity();
     }
 
     public void ShowPreviousPage()
     {
-        foreach (Transform child in ExpandedDaysParent)
-        {
-            Destroy(child.gameObject);
-        }
-
+        DestroysAllChilds();
+        ExpandedDays.Clear();
         currentPage++;
         
-        ExpandedDays.Clear();
         int lastShownDaysCount = allDaysCount - MaxDaysOnPage * (currentPage - 1);
         int startIdToShow;
 
@@ -91,15 +81,13 @@ public class DaysExpandedPanel : MonoBehaviour
             ExpandedDays.Add(expandedDay);
             expandedDay.SetExpandedDay(cachedDayButtons[i].DayInfo);
         }
+        
+        CheckButtonsActivity();
     }
 
     public void ShowNextPage()
     {
-        foreach (Transform child in ExpandedDaysParent)
-        {
-            Destroy(child.gameObject);
-        }
-    
+        DestroysAllChilds();
         ExpandedDays.Clear();
 
         currentPage--;
@@ -117,10 +105,21 @@ public class DaysExpandedPanel : MonoBehaviour
             ExpandedDays.Add(expandedDay);
             expandedDay.SetExpandedDay(cachedDayButtons[i].DayInfo);
         }
-
-        // Проверяем доступность кнопок навигации
-        // PrevButton.interactable = currentPage < pagesCount;
-        // NextButton.interactable = currentPage > 1;
+        
+        CheckButtonsActivity();
     }
 
+    private void DestroysAllChilds()
+    {
+        foreach (Transform child in ExpandedDaysParent)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
+    private void CheckButtonsActivity()
+    {
+        PrevButton.interactable = currentPage < pagesCount;
+        NextButton.interactable = currentPage > 1;
+    }
 }

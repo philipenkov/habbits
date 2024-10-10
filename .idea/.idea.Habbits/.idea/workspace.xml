@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4f19821-2472-4753-9128-d0353b521012" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Habbits/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/DaysExpandedPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_App/Scripts/UILogic/DaysExpandedPanel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +94,7 @@
       <workItem from="1721473616071" duration="3524000" />
       <workItem from="1721484254882" duration="4822000" />
       <workItem from="1721721587018" duration="21578000" />
-      <workItem from="1722754436098" duration="19616000" />
+      <workItem from="1722754436098" duration="20414000" />
     </task>
     <servers />
   </component>
