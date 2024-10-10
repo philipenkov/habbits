@@ -60,9 +60,11 @@ public class DaysExpandedPanel : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+
+        currentPage++;
         
         ExpandedDays.Clear();
-        int lastShownDaysCount = allDaysCount - MaxDaysOnPage * currentPage;
+        int lastShownDaysCount = allDaysCount - MaxDaysOnPage * (currentPage - 1);
         int startIdToShow;
 
         if (lastShownDaysCount < 0)
@@ -79,7 +81,7 @@ public class DaysExpandedPanel : MonoBehaviour
         else
         {
             startIdToShow = lastShownDaysCount - 1;
-            lastIdToShow = allDaysCount - MaxDaysOnPage * (currentPage + 1);
+            lastIdToShow = allDaysCount - MaxDaysOnPage * currentPage;
         }
 
         for (int i = startIdToShow; i >= lastIdToShow ; i--)
@@ -89,13 +91,36 @@ public class DaysExpandedPanel : MonoBehaviour
             ExpandedDays.Add(expandedDay);
             expandedDay.SetExpandedDay(cachedDayButtons[i].DayInfo);
         }
-        
-        currentPage++;
     }
 
     public void ShowNextPage()
     {
-        
+        foreach (Transform child in ExpandedDaysParent)
+        {
+            Destroy(child.gameObject);
+        }
+    
+        ExpandedDays.Clear();
+
+        currentPage--;
+
+        int startIdToShow = allDaysCount - MaxDaysOnPage * (currentPage - 1);
+        int endIdToShow = startIdToShow - MaxDaysOnPage;
+
+        if (endIdToShow < 0)
+            endIdToShow = 0;
+
+        for (int i = startIdToShow - 1; i >= endIdToShow; i--)
+        {
+            var expandedDayObj = Instantiate(ExpandedDayPrefab, ExpandedDaysParent);
+            ExpandedDay expandedDay = expandedDayObj.GetComponent<ExpandedDay>();
+            ExpandedDays.Add(expandedDay);
+            expandedDay.SetExpandedDay(cachedDayButtons[i].DayInfo);
+        }
+
+        // Проверяем доступность кнопок навигации
+        // PrevButton.interactable = currentPage < pagesCount;
+        // NextButton.interactable = currentPage > 1;
     }
 
 }
