@@ -43,10 +43,10 @@ public class DaysExpandedPanel : MonoBehaviour
         }
 
         currentPage = 1;
-
+        
         if (isOnePage)
         {
-            for (int i = allDaysCount - 1; i >= lastIdToShow ; i--)
+            for (int i = lastIdToShow; i < allDaysCount; i++)
             {
                 var expandedDayObj = Instantiate(ExpandedDayPrefab, ExpandedDaysParent);
                 ExpandedDay expandedDay = expandedDayObj.GetComponent<ExpandedDay>();
@@ -56,7 +56,7 @@ public class DaysExpandedPanel : MonoBehaviour
         }
         else
         {
-            for (int i = allDaysCount - 1; i > lastIdToShow ; i--)
+            for (int i = lastIdToShow + 1; i < allDaysCount; i++)
             {
                 var expandedDayObj = Instantiate(ExpandedDayPrefab, ExpandedDaysParent);
                 ExpandedDay expandedDay = expandedDayObj.GetComponent<ExpandedDay>();
@@ -96,7 +96,7 @@ public class DaysExpandedPanel : MonoBehaviour
             lastIdToShow = allDaysCount - MaxDaysOnPage * currentPage;
         }
 
-        for (int i = startIdToShow; i >= lastIdToShow ; i--)
+        for (int i = lastIdToShow; i <= startIdToShow; i++)
         {
             var expandedDayObj = Instantiate(ExpandedDayPrefab, ExpandedDaysParent);
             ExpandedDay expandedDay = expandedDayObj.GetComponent<ExpandedDay>();
@@ -121,7 +121,7 @@ public class DaysExpandedPanel : MonoBehaviour
         if (endIdToShow < 0)
             endIdToShow = 0;
 
-        for (int i = startIdToShow - 1; i >= endIdToShow; i--)
+        for (int i = endIdToShow; i < startIdToShow; i++)
         {
             var expandedDayObj = Instantiate(ExpandedDayPrefab, ExpandedDaysParent);
             ExpandedDay expandedDay = expandedDayObj.GetComponent<ExpandedDay>();
